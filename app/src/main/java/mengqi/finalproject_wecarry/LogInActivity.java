@@ -27,7 +27,7 @@ public class LogInActivity extends AppCompatActivity {
         setContentView(R.layout.activity_log_in);
         setTitle("Log In");
 
-        firebase = new Firebase("https://wecarry.firebaseio.com/");
+        firebase = new Firebase("https://wecarry.firebaseio.com");
         emailEditText = (EditText) findViewById(R.id.edit_text_email);
         passwordEditText = (EditText) findViewById(R.id.edit_text_password);
     }

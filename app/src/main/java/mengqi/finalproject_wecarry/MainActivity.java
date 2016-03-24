@@ -3,6 +3,8 @@ package mengqi.finalproject_wecarry;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.EditText;
 
 import com.firebase.client.AuthData;
@@ -51,22 +53,22 @@ public class MainActivity extends AppCompatActivity {
         rootRef.removeAuthStateListener(authStateListener);
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu){
-//        getMenuInflater().inflate(R.menu.menu, menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item){
-//        switch(item.getItemId()){
-//            case R.id.log_out:
-//                rootRef.unauth();
-//                keyEditText.setText("");
-//                valueEditText.setText("");
-//                return true;
-//            default:
-//                return super.onOptionsItemSelected(item);
-//        }
-//    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.log_out:
+                rootRef.unauth();
+                keyEditText.setText("");
+                valueEditText.setText("");
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 }

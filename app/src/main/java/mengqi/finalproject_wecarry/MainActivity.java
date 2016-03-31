@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
@@ -25,27 +27,31 @@ public class MainActivity extends AppCompatActivity {
         Firebase.setAndroidContext(this);
         rootRef = new Firebase("https://wecarry.firebaseio.com");
 
-
         authStateListener = new Firebase.AuthStateListener() {
             @Override
             public void onAuthStateChanged(AuthData authData) {
                 if (authData != null) {
-                    userRef = rootRef.child("users/" + authData.getUid());
-                } else {
-                    Intent intent = new Intent(MainActivity.this, LogInActivity.class);
-                    startActivity(intent);
+//                    userRef = rootRef.child("users/" + authData.getUid());
+                    TextView username = (TextView) findViewById(R.id.log_in);
+                    username.setText("Switch User");
                 }
             }
         };
 
+
     }
 
+    public void LogIn2(View view) {
+        Intent intent = new Intent(MainActivity.this, LogInActivity.class);
+        startActivity(intent);
+    }
 
     @Override
     protected void onResume() {
         super.onResume();
         rootRef.addAuthStateListener(authStateListener);
     }
+
 
     @Override
     protected void onPause() {

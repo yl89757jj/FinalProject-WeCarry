@@ -7,8 +7,11 @@ public class SearchResult extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_result);
         setTitle("Search Result");
     }
+
+
 }

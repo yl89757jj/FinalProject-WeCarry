@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void LogIn2(View view) {
-        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+        Intent intent = new Intent(MainActivity.this, LogInActivity.class);
         startActivity(intent);
     }
 
@@ -76,5 +76,10 @@ public class MainActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void conti(View view) {
+        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+        startActivity(intent);
     }
 }

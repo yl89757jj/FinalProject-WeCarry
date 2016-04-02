@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText keyEditText;
     private EditText valueEditText;
 
-    private Firebase rootRef;
+    public static Firebase rootRef;
     private Firebase userRef;
     private Firebase.AuthStateListener authStateListener;
 
@@ -75,8 +75,6 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.log_out:
                 rootRef.unauth();
-                keyEditText.setText("");
-                valueEditText.setText("");
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

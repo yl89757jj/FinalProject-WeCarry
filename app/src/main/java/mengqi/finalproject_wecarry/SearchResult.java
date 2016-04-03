@@ -20,7 +20,6 @@ public class SearchResult extends AppCompatActivity {
 
 
     public void postMyInfo(View view) {
-
         Intent intent = new Intent(SearchResult.this, UserFlight.class);
         Intent intent1 = new Intent(SearchResult.this, UserCarry.class);
 

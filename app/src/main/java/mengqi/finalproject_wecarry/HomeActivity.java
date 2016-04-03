@@ -9,6 +9,7 @@ import android.view.View;
 
 public class HomeActivity extends AppCompatActivity {
     public static boolean fly;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

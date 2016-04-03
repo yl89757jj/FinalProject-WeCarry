@@ -7,12 +7,24 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-public class UserFlight extends AppCompatActivity {
+import com.firebase.client.AuthData;
+import com.firebase.client.Firebase;
 
+public class UserFlight extends AppCompatActivity {
+    private Firebase.AuthStateListener authStateListener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_flight);
+        authStateListener = new Firebase.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(AuthData authData) {
+                if (authData == null) {
+                    Intent intent = new Intent(UserFlight.this, LogInActivity.class);
+                    startActivity(intent);
+                }
+            }
+        };
     }
 
     public void sumbitFligt(View view) {
@@ -35,5 +47,18 @@ public class UserFlight extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MainActivity.rootRef.addAuthStateListener(authStateListener);
+    }
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MainActivity.rootRef.removeAuthStateListener(authStateListener);
     }
 }

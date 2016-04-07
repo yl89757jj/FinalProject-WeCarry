@@ -29,9 +29,9 @@ public class FlightsAdapter extends RecyclerView.Adapter<FlightViewHolder> {
     @Override
     public void onBindViewHolder(FlightViewHolder holder, int position) {
         Flight flight = flights.get(position);
-        holder.personName.setText(flight.name);
-        holder.personInfo.setText(flight.info);
-        holder.personPhoto.setImageResource(flight.photoId);
+//        holder.personName.setText(flight.name);
+//        holder.personInfo.setText(flight.info);
+//        holder.personPhoto.setImageResource(flight.photoId);
     }
 
     @Override

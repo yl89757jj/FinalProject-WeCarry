@@ -4,13 +4,21 @@ package mengqi.finalproject_wecarry;
  * Created by Lu on 2/23/2016.
  */
 public class Good {
-    public String name;
-    public String info;
-    public int photoId;
+    public String departureArea;
+    public String arrivalArea;
+    public String datePreferred;
+    public String flexibility;
+    public String whatToCarry;
 
-    public Good(String name, String info, int photoId) {
-        this.name = name;
-        this.info = info;
-        this.photoId = photoId;
+    public Good() {
+        this("", "", "", "", "");
+    }
+
+    public Good(String departureArea, String arrivalArea, String datePreferred, String flexibility, String whatToCarry) {
+        this.departureArea = departureArea;
+        this.arrivalArea = arrivalArea;
+        this.datePreferred = datePreferred;
+        this.flexibility = flexibility;
+        this.whatToCarry = whatToCarry;
     }
 }

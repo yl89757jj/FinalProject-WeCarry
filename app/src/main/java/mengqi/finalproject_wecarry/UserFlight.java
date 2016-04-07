@@ -6,12 +6,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
 
 public class UserFlight extends AppCompatActivity {
     private Firebase.AuthStateListener authStateListener;
+    private EditText departure;
+    private EditText arrival;
+    private EditText flightNo;
+    private EditText departDate;
+    private EditText spaceAvaible;
+    private EditText specialNote;
+    private Firebase userRef;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,11 +32,21 @@ public class UserFlight extends AppCompatActivity {
                     Intent intent = new Intent(UserFlight.this, LogInActivity.class);
                     startActivity(intent);
                 }
+                userRef = MainActivity.rootRef.child("users/" + authData.getUid());
             }
         };
     }
 
     public void sumbitFligt(View view) {
+        departure = (EditText) findViewById(R.id.departure_city);
+        arrival = (EditText) findViewById(R.id.arrival_city);
+        flightNo = (EditText) findViewById(R.id.fight_no);
+        departDate = (EditText) findViewById(R.id.depart_date);
+        spaceAvaible = (EditText) findViewById(R.id.space_available);
+        specialNote = (EditText) findViewById(R.id.special_note);
+        Flight flight = new Flight(departure.getText().toString(), arrival.getText().toString(), flightNo.getText().toString(), departDate.getText().toString(),
+                spaceAvaible.getText().toString(), specialNote.getText().toString());
+        userRef.child("flights").push().setValue(flight);
         Intent intent = new Intent(UserFlight.this, HomeActivity.class);
         startActivity(intent);
     }

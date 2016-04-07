@@ -6,15 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText keyEditText;
-    private EditText valueEditText;
+
 
     public static Firebase rootRef;
     private Firebase userRef;
@@ -31,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(AuthData authData) {
                 if (authData != null) {
-//                    userRef = rootRef.child("users/" + authData.getUid());
+                    userRef = rootRef.child("users/" + authData.getUid());
                     TextView username = (TextView) findViewById(R.id.log_in);
                     username.setText("Switch User");
                 }

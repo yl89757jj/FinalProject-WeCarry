@@ -29,9 +29,9 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodViewHolder> {
     @Override
     public void onBindViewHolder(GoodViewHolder holder, int position) {
         Good good = goods.get(position);
-        holder.personName.setText(good.name);
-        holder.personInfo.setText(good.info);
-        holder.personPhoto.setImageResource(good.photoId);
+//        holder.personName.setText(good.name);
+//        holder.personInfo.setText(good.info);
+//        holder.personPhoto.setImageResource(good.photoId);
     }
 
     @Override

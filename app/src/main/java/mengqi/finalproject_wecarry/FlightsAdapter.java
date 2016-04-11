@@ -6,18 +6,58 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.firebase.client.ChildEventListener;
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Lu on 2/23/2016.
  */
 public class FlightsAdapter extends RecyclerView.Adapter<FlightViewHolder> {
-    private List<Flight> flights;
+    public List<Flight> flights = new ArrayList<>();
     private Context context;
 
-    public FlightsAdapter(List<Flight> flights, Context context) {
-        this.flights = flights;
+
+    public FlightsAdapter(Firebase flightsRef, Context context) {
+
         this.context = context;
+
+        flightsRef.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                Flight flight = dataSnapshot.getValue(Flight.class);
+                flights.add(flight);
+                notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                Flight flight = dataSnapshot.getValue(Flight.class);
+                flights.remove(flight);
+                notifyDataSetChanged();
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
     }
 
     @Override
@@ -29,9 +69,8 @@ public class FlightsAdapter extends RecyclerView.Adapter<FlightViewHolder> {
     @Override
     public void onBindViewHolder(FlightViewHolder holder, int position) {
         Flight flight = flights.get(position);
-//        holder.personName.setText(flight.name);
-//        holder.personInfo.setText(flight.info);
-//        holder.personPhoto.setImageResource(flight.photoId);
+        holder.bind(flight);
+
     }
 
     @Override

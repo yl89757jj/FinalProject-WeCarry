@@ -10,6 +10,7 @@ public class Good {
     public String flexibility;
     public String whatToCarry;
 
+
     public Good() {
         this("", "", "", "", "");
     }
@@ -20,5 +21,15 @@ public class Good {
         this.datePreferred = datePreferred;
         this.flexibility = flexibility;
         this.whatToCarry = whatToCarry;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (!(object instanceof Good)) {
+            return false;
+        }
+
+        Good good = (Good) object;
+        return whatToCarry == good.whatToCarry;//there should be a particular var for each good
     }
 }

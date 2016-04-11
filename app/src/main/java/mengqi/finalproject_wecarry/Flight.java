@@ -10,6 +10,8 @@ public class Flight {
     public String departDate;
     public String spaceAvailable;
     public String specialNote;
+    //public int fligtId;
+
 
     public Flight() {
         this("", "", "", "", "", "");
@@ -22,5 +24,17 @@ public class Flight {
         this.departDate = departDate;
         this.spaceAvailable = spaceAvailable;
         this.specialNote = specialNote;
+        //this.fligtId=fligtId;
     }
+
+    @Override
+    public boolean equals(Object object) {
+        if (!(object instanceof Flight)) {
+            return false;
+        }
+
+        Flight flight = (Flight) object;
+        return number.equals(flight.number);//there should be a particular var for each flight
+    }
+
 }

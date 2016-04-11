@@ -1,39 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/card_view"
+    android:id="@+id/goods_card"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:padding="16dp">
 
-        <ImageView
-            android:id="@+id/person_photo"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginRight="16dp"
-            android:src="@drawable/obama" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <!--<ImageView-->
+            <!--android:id="@+id/person_photo"-->
+            <!--android:layout_width="100dp"-->
+            <!--android:layout_height="100dp"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:layout_marginRight="16dp"-->
+            <!--android:src="@drawable/bush" />-->
+
+            <TextView
+                android:id="@+id/goods_departure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text="New York"
+                android:textSize="25sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  -->  "
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/goods_arrival"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Beijing"
+                android:textSize="25sp" />
+        </LinearLayout>
+
 
         <TextView
-            android:id="@+id/person_name"
+            android:id="@+id/goods_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/person_photo"
-            android:text="Barack Obama"
-            android:textSize="30sp" />
+            android:text=" 12.15  "
+            android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/person_info"
+            android:id="@+id/goods_content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/person_name"
-            android:layout_toRightOf="@+id/person_photo"
-            android:text="2009-2017" />
-    </RelativeLayout>
+            android:text=" Boom shakalaka  "
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/goods_flexibility"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 你猜  "
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
 </android.support.v7.widget.CardView>

@@ -9,18 +9,20 @@ public class Good {
     public String datePreferred;
     public String flexibility;
     public String whatToCarry;
+    public String userName;
 
 
     public Good() {
-        this("", "", "", "", "");
+        this("", "", "", "", "", "");
     }
 
-    public Good(String departureArea, String arrivalArea, String datePreferred, String flexibility, String whatToCarry) {
+    public Good(String departureArea, String arrivalArea, String datePreferred, String flexibility, String whatToCarry, String userName) {
         this.departureArea = departureArea;
         this.arrivalArea = arrivalArea;
         this.datePreferred = datePreferred;
         this.flexibility = flexibility;
         this.whatToCarry = whatToCarry;
+        this.userName = userName;
     }
 
     @Override

@@ -90,6 +90,6 @@
         android:gravity="center"
         android:layout_gravity="center"
         android:text="Submit"
-        android:onClick="sumbitFligt" />
+        android:onClick="sumbitFlight" />
 
 </LinearLayout>

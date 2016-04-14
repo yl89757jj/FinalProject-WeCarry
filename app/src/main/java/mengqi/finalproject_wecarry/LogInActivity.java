@@ -21,12 +21,13 @@ public class LogInActivity extends AppCompatActivity {
     private EditText emailEditText;
     private EditText passwordEditText;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
         setTitle("Log In");
-
+        Firebase.setAndroidContext(this);
         firebase = new Firebase("https://wecarry.firebaseio.com");
         emailEditText = (EditText) findViewById(R.id.edit_text_email);
         passwordEditText = (EditText) findViewById(R.id.edit_text_password);

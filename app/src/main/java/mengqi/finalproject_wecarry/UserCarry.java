@@ -19,6 +19,7 @@ public class UserCarry extends AppCompatActivity {
     private EditText flexibility;
     private EditText whatToCarry;
     private Firebase userRef;
+    private String userName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +31,10 @@ public class UserCarry extends AppCompatActivity {
                 if (authData == null) {
                     Intent intent = new Intent(UserCarry.this, LogInActivity.class);
                     startActivity(intent);
+                } else {
+                    userRef = MainActivity.rootRef;
+                    userName = authData.getUid();
                 }
-                userRef = MainActivity.rootRef.child("users/" + authData.getUid());
             }
         };
     }
@@ -43,7 +46,7 @@ public class UserCarry extends AppCompatActivity {
         flexibility = (EditText) findViewById(R.id.flexibility);
         whatToCarry = (EditText) findViewById(R.id.what_to_carry);
         Good goods = new Good(departureArea.getText().toString(), arrivalArea.getText().toString(), datePreferred.getText().toString(), flexibility.getText().toString(),
-                whatToCarry.getText().toString());
+                whatToCarry.getText().toString(), userName);
         userRef.child("goods").push().setValue(goods);
         Intent intent = new Intent(UserCarry.this, HomeActivity.class);
         startActivity(intent);

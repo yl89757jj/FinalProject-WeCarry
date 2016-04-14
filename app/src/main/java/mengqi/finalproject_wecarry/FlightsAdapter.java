@@ -25,6 +25,7 @@ public class FlightsAdapter extends RecyclerView.Adapter<FlightViewHolder> {
     public FlightsAdapter(Firebase flightsRef, Context context) {
 
         this.context = context;
+        flights = new ArrayList<>();
 
         flightsRef.addChildEventListener(new ChildEventListener() {
             @Override

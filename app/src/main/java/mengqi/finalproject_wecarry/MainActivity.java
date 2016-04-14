@@ -15,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     public static Firebase rootRef;
-    private Firebase userRef;
     private Firebase.AuthStateListener authStateListener;
 
     @Override
@@ -29,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(AuthData authData) {
                 if (authData != null) {
-                    userRef = rootRef.child("users/" + authData.getUid());
                     TextView username = (TextView) findViewById(R.id.log_in);
                     username.setText("Switch User");
                 }

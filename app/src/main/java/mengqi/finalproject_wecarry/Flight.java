@@ -10,20 +10,23 @@ public class Flight {
     public String departDate;
     public String spaceAvailable;
     public String specialNote;
+    public String userName;
     //public int fligtId;
 
 
     public Flight() {
-        this("", "", "", "", "", "");
+        this("", "", "", "", "", "", "");
     }
 
-    public Flight(String departure, String arrival, String number, String departDate, String spaceAvailable, String specialNote) {
+    public Flight(String departure, String arrival, String number, String departDate,
+                  String spaceAvailable, String specialNote, String userName) {
         this.departure = departure;
         this.arrival = arrival;
         this.number = number;
         this.departDate = departDate;
         this.spaceAvailable = spaceAvailable;
         this.specialNote = specialNote;
+        this.userName = userName;
         //this.fligtId=fligtId;
     }
 

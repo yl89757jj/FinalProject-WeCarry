@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">WeCarry</string>
+    <string-array name="city_names">
+        <item>New York</item>
+        <item>Washington D.C</item>
+        <item>Boston</item>
+        <item>Philadelphia</item>
+        <item>Beijing</item>
+        <item>Shanghai</item>
+        <item>Guangzhou</item>
+        <item>HongKong</item>
+    </string-array>
+    <string-array name="flexibility">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
 </resources>

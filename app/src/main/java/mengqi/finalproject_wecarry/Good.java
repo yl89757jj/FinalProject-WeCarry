@@ -6,6 +6,55 @@ package mengqi.finalproject_wecarry;
 public class Good {
     public String departureArea;
     public String arrivalArea;
+
+    public String getDatePreferred() {
+        return datePreferred;
+    }
+
+    public void setDatePreferred(String datePreferred) {
+        this.datePreferred = datePreferred;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getDepartureArea() {
+        return departureArea;
+    }
+
+    public void setDepartureArea(String departureArea) {
+        this.departureArea = departureArea;
+    }
+
+    public String getArrivalArea() {
+        return arrivalArea;
+    }
+
+    public void setArrivalArea(String arrivalArea) {
+        this.arrivalArea = arrivalArea;
+    }
+
+    public String getFlexibility() {
+        return flexibility;
+    }
+
+    public void setFlexibility(String flexibility) {
+        this.flexibility = flexibility;
+    }
+
+    public String getWhatToCarry() {
+        return whatToCarry;
+    }
+
+    public void setWhatToCarry(String whatToCarry) {
+        this.whatToCarry = whatToCarry;
+    }
+
     public String datePreferred;
     public String flexibility;
     public String whatToCarry;

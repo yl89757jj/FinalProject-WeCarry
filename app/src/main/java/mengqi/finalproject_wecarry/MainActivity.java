@@ -3,6 +3,8 @@ package mengqi.finalproject_wecarry;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,12 +12,12 @@ import android.widget.TextView;
 
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
+import com.firebase.client.Query;
 
 public class MainActivity extends AppCompatActivity {
-
-
     public static Firebase rootRef;
     private Firebase.AuthStateListener authStateListener;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,15 +26,19 @@ public class MainActivity extends AppCompatActivity {
         Firebase.setAndroidContext(this);
         rootRef = new Firebase("https://wecarry.firebaseio.com");
 
+
         authStateListener = new Firebase.AuthStateListener() {
             @Override
             public void onAuthStateChanged(AuthData authData) {
                 if (authData != null) {
                     TextView username = (TextView) findViewById(R.id.log_in);
                     username.setText("Switch User");
+                    //read data
                 }
+
             }
         };
+
 
 
     }
@@ -76,6 +82,5 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
 
 }

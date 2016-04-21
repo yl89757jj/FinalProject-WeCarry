@@ -16,17 +16,33 @@
         android:orientation="vertical"
         android:layout_weight="9">
 
-
-        <include layout="@layout/card_view_flight" />
-
-        <include layout="@layout/card_view_goods" />
-
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycler_view"
+            android:id="@+id/flightRecycler_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="0dp"
+            android:layout_weight="4.5"
+            >
 
         </android.support.v7.widget.RecyclerView>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/goodsRecycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4.5">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <!--<include layout="@layout/card_view_flight" />-->
+
+        <!--<include layout="@layout/card_view_goods" />-->
+
+        <!--<android.support.v7.widget.RecyclerView-->
+            <!--android:id="@+id/recycler_view"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+
+        <!--</android.support.v7.widget.RecyclerView>-->
 
     </LinearLayout>
 

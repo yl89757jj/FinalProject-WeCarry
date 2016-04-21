@@ -11,6 +11,7 @@ import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -22,7 +23,7 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodViewHolder> {
 
 
     public GoodsAdapter(Firebase goodsRef, Context context) {
-
+        goods=new ArrayList<>();
         this.context = context;
 
         goodsRef.addChildEventListener(new ChildEventListener() {

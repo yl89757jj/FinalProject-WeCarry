@@ -27,17 +27,20 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         Firebase.setAndroidContext(this);
 
+        flightRecyclerView = (RecyclerView) findViewById(R.id.flightRecycler_view);
+        goodsRecyclerView = (RecyclerView) findViewById(R.id.goodsRecycler_view);
+
 
         flightsadapter = new FlightsAdapter(MainActivity.rootRef.child("flights"), HomeActivity.this);
         flightRecyclerView.setAdapter(flightsadapter);
         goodsAdapter = new GoodsAdapter(MainActivity.rootRef.child("goods"), HomeActivity.this);
         goodsRecyclerView.setAdapter(goodsAdapter);
 
-        flightRecyclerView = (RecyclerView) findViewById(R.id.flightRecycler_view);
+
         flightRecyclerView.setHasFixedSize(true);
         flightRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        goodsRecyclerView = (RecyclerView) findViewById(R.id.goodsRecycler_view);
+
         goodsRecyclerView.setHasFixedSize(true);
         goodsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 

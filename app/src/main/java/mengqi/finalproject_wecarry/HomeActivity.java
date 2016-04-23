@@ -8,9 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 
-import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
 
 public class HomeActivity extends AppCompatActivity {
@@ -33,9 +31,9 @@ public class HomeActivity extends AppCompatActivity {
 
         flightsadapter = new FlightsAdapter(MainActivity.rootRef.child("flights"), HomeActivity.this);
         flightRecyclerView.setAdapter(flightsadapter);
+
         goodsAdapter = new GoodsAdapter(MainActivity.rootRef.child("goods"), HomeActivity.this);
         goodsRecyclerView.setAdapter(goodsAdapter);
-
 
         flightRecyclerView.setHasFixedSize(true);
         flightRecyclerView.setLayoutManager(new LinearLayoutManager(this));

@@ -8,4 +8,14 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="MyButton">
+        <item name="android:textColor">#FDFEFE</item>
+        <item name="android:background">#55DED6</item>
+        <item name="android:typeface">serif</item>
+        <item name="android:padding">1dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_margin">1dp</item>
+    </style>
 </resources>

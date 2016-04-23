@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/goods_card"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,10 +12,10 @@
         android:padding="16dp">
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal">
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
 
             <!--<ImageView-->
             <!--android:id="@+id/person_photo"-->
@@ -35,6 +35,7 @@
                 android:textSize="25sp" />
 
             <TextView
+                android:id="@+id/arrow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="  -->  "
@@ -48,27 +49,65 @@
                 android:textSize="25sp" />
         </LinearLayout>
 
-
-        <TextView
-            android:id="@+id/goods_time"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=" 12.15  "
-            android:textSize="20sp" />
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/goods_content"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" Boom shakalaka  "
-            android:textSize="20sp" />
+            <TextView
+                android:id="@+id/goods_timeT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date Preferred:"
+                android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/goods_flexibility"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/goods_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 12.15  "
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=" 你猜  "
-            android:textSize="20sp" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/goods_contentT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="What to Carry:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/goods_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Boom shakalaka  "
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/goods_flexibilityT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Flexibility:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/goods_flexibility"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 你猜  "
+                android:textSize="20sp" />
+        </LinearLayout>
 
 
     </LinearLayout>

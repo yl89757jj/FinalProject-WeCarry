@@ -3,33 +3,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#C3EEF6"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
     tools:context="mengqi.finalproject_wecarry.HomeActivity">
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="vertical"
-        android:layout_weight="9">
+        android:layout_weight="16"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/home_flying"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Flying"
+            android:textSize="25sp" />
+
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/flightRecycler_view"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="4.5"
-            >
+            android:layout_weight="5">
 
         </android.support.v7.widget.RecyclerView>
+
+        <TextView
+            android:id="@+id/home_carry"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Carry Needed"
+            android:textSize="25sp" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/goodsRecycler_view"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="4.5">
+            android:layout_weight="5">
 
         </android.support.v7.widget.RecyclerView>
 
@@ -38,9 +58,9 @@
         <!--<include layout="@layout/card_view_goods" />-->
 
         <!--<android.support.v7.widget.RecyclerView-->
-            <!--android:id="@+id/recycler_view"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent">-->
+        <!--android:id="@+id/recycler_view"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
 
         <!--</android.support.v7.widget.RecyclerView>-->
 
@@ -49,24 +69,26 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="3"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/iWillFly"
-            android:text="I will fly "
+            style="@style/MyButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="SearchGoods" />
+            android:onClick="SearchGoods"
+            android:text="I will fly " />
 
         <Button
             android:id="@+id/carryMe"
-            android:text="Carry Me"
+            style="@style/MyButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="SearchFlight" />
+            android:onClick="SearchFlight"
+            android:text="Carry Me" />
 
     </LinearLayout>
 

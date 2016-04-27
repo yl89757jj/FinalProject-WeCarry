@@ -9,13 +9,20 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
 
 public class User extends AppCompatActivity {
+    private Firebase.AuthStateListener authStateListener;
+    private Firebase userRef;
     private RecyclerView flightRecyclerView;
     private FlightsAdapter flightsAdapter;
     private GoodsAdapter goodsAdapter;
     private RecyclerView goodsRecyclerView;
+    public String email;
+    public String userName;
+
+
 
 
     @Override
@@ -24,6 +31,18 @@ public class User extends AppCompatActivity {
         setContentView(R.layout.activity_user);
         Firebase.setAndroidContext(this);
 
+        authStateListener = new Firebase.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(AuthData authData) {
+                if (authData == null) {
+                    Intent intent = new Intent(User.this, LogInActivity.class);
+                    startActivity(intent);
+                } else {
+                    userRef = MainActivity.rootRef;
+                    userName = authData.getUid();
+                }
+            }
+        };
 
         flightRecyclerView = (RecyclerView) findViewById(R.id.flightRecycler_view);
         goodsRecyclerView = (RecyclerView) findViewById(R.id.goodsRecycler_view);
@@ -46,15 +65,13 @@ public class User extends AppCompatActivity {
     }
 
 
-    public void SearchGoods(View view) {
-        HomeActivity.fly = true;
-        Intent intent = new Intent(User.this, SearchGoods.class);
+    public void PostGoods(View view) {
+        Intent intent = new Intent(User.this, UserCarry.class);
         startActivity(intent);
     }
 
-    public void SearchFlight(View view) {
-        HomeActivity.fly = false;
-        Intent intent = new Intent(User.this, SearchFlight.class);
+    public void PostFlight(View view) {
+        Intent intent = new Intent(User.this, UserFlight.class);
         startActivity(intent);
     }
 

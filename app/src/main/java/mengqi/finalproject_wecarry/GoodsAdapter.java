@@ -24,7 +24,9 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodViewHolder> {
     public String arrivalArea="";
     public String datePreferred="";
     public String whatToCarry="";
-    public String userName="";
+    public String userName=MainActivity.userName;
+
+
 
     //filter boolean
     private boolean filterDep(Good good){

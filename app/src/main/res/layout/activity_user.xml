@@ -24,7 +24,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Flying"
+            android:text="My Flight"
             android:textSize="25sp" />
 
 
@@ -42,7 +42,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Carry Needed"
+            android:text="My Goods"
             android:textSize="25sp" />
 
         <android.support.v7.widget.RecyclerView
@@ -69,7 +69,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="SearchGoods"
+            android:onClick="PostFlight"
             android:text="Post My Flight " />
 
         <Button
@@ -78,7 +78,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="SearchFlight"
+            android:onClick="PostGoods"
             android:text="Post My Goods" />
 
     </LinearLayout>

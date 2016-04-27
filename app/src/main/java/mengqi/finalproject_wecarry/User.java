@@ -1,8 +1,8 @@
 package mengqi.finalproject_wecarry;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
@@ -11,8 +11,7 @@ import android.view.View;
 
 import com.firebase.client.Firebase;
 
-public class HomeActivity extends AppCompatActivity {
-    public static boolean fly;
+public class User extends AppCompatActivity {
     private RecyclerView flightRecyclerView;
     private FlightsAdapter flightsAdapter;
     private GoodsAdapter goodsAdapter;
@@ -22,7 +21,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_user);
         Firebase.setAndroidContext(this);
 
 
@@ -30,10 +29,10 @@ public class HomeActivity extends AppCompatActivity {
         goodsRecyclerView = (RecyclerView) findViewById(R.id.goodsRecycler_view);
 
 
-        flightsAdapter = new FlightsAdapter(MainActivity.rootRef.child("flights"), HomeActivity.this,1);
+        flightsAdapter = new FlightsAdapter(MainActivity.rootRef.child("flights"), User.this,3);
         flightRecyclerView.setAdapter(flightsAdapter);
 
-        goodsAdapter = new GoodsAdapter(MainActivity.rootRef.child("goods"), HomeActivity.this,1);
+        goodsAdapter = new GoodsAdapter(MainActivity.rootRef.child("goods"), User.this,3);
         goodsRecyclerView.setAdapter(goodsAdapter);
 
         flightRecyclerView.setHasFixedSize(true);
@@ -48,14 +47,14 @@ public class HomeActivity extends AppCompatActivity {
 
 
     public void SearchGoods(View view) {
-        fly = true;
-        Intent intent = new Intent(HomeActivity.this, SearchGoods.class);
+        HomeActivity.fly = true;
+        Intent intent = new Intent(User.this, SearchGoods.class);
         startActivity(intent);
     }
 
     public void SearchFlight(View view) {
-        fly = false;
-        Intent intent = new Intent(HomeActivity.this, SearchFlight.class);
+        HomeActivity.fly = false;
+        Intent intent = new Intent(User.this, SearchFlight.class);
         startActivity(intent);
     }
 
@@ -72,7 +71,7 @@ public class HomeActivity extends AppCompatActivity {
                 MainActivity.rootRef.unauth();
                 return true;
             case R.id.user:
-                Intent intent = new Intent(HomeActivity.this, User.class);
+                Intent intent = new Intent(User.this, User.class);
                 startActivity(intent);
             default:
                 return super.onOptionsItemSelected(item);

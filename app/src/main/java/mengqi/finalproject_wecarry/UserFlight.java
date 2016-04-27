@@ -105,6 +105,9 @@ public class UserFlight extends AppCompatActivity {
             case R.id.log_out:
                 MainActivity.rootRef.unauth();
                 return true;
+            case R.id.user:
+                Intent intent = new Intent(UserFlight.this, User.class);
+                startActivity(intent);
             default:
                 return super.onOptionsItemSelected(item);
         }

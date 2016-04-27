@@ -53,6 +53,7 @@ public class UserCarry extends AppCompatActivity {
         };
     }
 
+
     public void datePick(View view) {
         button = (Button) findViewById(R.id.date_preferred);
         showDialog(DILOG_ID);
@@ -100,6 +101,9 @@ public class UserCarry extends AppCompatActivity {
             case R.id.log_out:
                 MainActivity.rootRef.unauth();
                 return true;
+            case R.id.user:
+                Intent intent = new Intent(UserCarry.this, User.class);
+                startActivity(intent);
             default:
                 return super.onOptionsItemSelected(item);
         }

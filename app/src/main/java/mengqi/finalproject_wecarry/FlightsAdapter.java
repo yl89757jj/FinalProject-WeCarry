@@ -1,6 +1,7 @@
 package mengqi.finalproject_wecarry;
 
 import android.content.Context;
+import android.os.Debug;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,13 +18,37 @@ import java.util.List;
 /**
  * Created by Lu on 2/23/2016.
  */
-public class FlightsAdapter extends RecyclerView.Adapter<FlightViewHolder> {
+public class  FlightsAdapter extends RecyclerView.Adapter<FlightViewHolder> {
     public List<Flight> flights = new ArrayList<>();
     private Context context;
+    public String departure="New York";
+    public String arrival="";
+    public String departDate="";
+    public String spaceAvailable="";
+    public String userName;
 
 
-    public FlightsAdapter(Firebase flightsRef, Context context) {
 
+
+//filter boolean
+    private boolean filterDep(Flight flight){
+        return departure.equals("") || flight.departure.equals(departure);
+    }
+
+    private boolean filterDate(Flight flight){
+        return departDate.equals("") || flight.departDate.equals(departDate);
+    }
+
+    private boolean filterArv(Flight flight){
+        return arrival.equals("") || flight.arrival.equals(arrival);
+    }
+
+    private boolean filterSpc(Flight flight){
+        return spaceAvailable.equals("") || flight.spaceAvailable.equals(spaceAvailable);
+    }
+
+
+    public FlightsAdapter(Firebase flightsRef, Context context, final int filter) {
         this.context = context;
         flights = new ArrayList<>();
 
@@ -31,9 +56,23 @@ public class FlightsAdapter extends RecyclerView.Adapter<FlightViewHolder> {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Flight flight = dataSnapshot.getValue(Flight.class);
-                flights.add(flight);
+                switch (filter) {
+                    case 1:
+                        flights.add(flight);
+                        break;
+                    case 2:
+                        boolean show = filterArv(flight) && filterDep(flight) && filterSpc(flight)&&filterDate(flight);
+                        if (show) {
+                            flights.add(flight);
+                        }
+                        break;
+                    case 3:
+                        if(flight.userName.equals(userName)){
+                            flights.add(flight);
+                        }
+                        break;
+                }
                 notifyDataSetChanged();
-
             }
 
             @Override
@@ -61,6 +100,7 @@ public class FlightsAdapter extends RecyclerView.Adapter<FlightViewHolder> {
         });
     }
 
+
     @Override
     public FlightViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view_flight, parent, false);
@@ -71,7 +111,6 @@ public class FlightsAdapter extends RecyclerView.Adapter<FlightViewHolder> {
     public void onBindViewHolder(FlightViewHolder holder, int position) {
         Flight flight = flights.get(position);
         holder.bind(flight);
-
     }
 
     @Override

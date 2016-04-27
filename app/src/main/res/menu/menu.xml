@@ -5,4 +5,10 @@
         android:id="@+id/log_out"
         android:title="Log Out"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/user"
+        android:title="My Account"
+        app:showAsAction="never"
+    />
 </menu>

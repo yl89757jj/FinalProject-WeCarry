@@ -20,9 +20,31 @@ import java.util.List;
 public class GoodsAdapter extends RecyclerView.Adapter<GoodViewHolder> {
     private List<Good> goods;
     private Context context;
+    public String departureArea="Shanghai";
+    public String arrivalArea="";
+    public String datePreferred="";
+    public String whatToCarry="";
+    public String userName="";
+
+    //filter boolean
+    private boolean filterDep(Good good){
+       return departureArea.equals("") || good.departureArea.equals(departureArea);
+    }
+
+    private boolean filterArv(Good good){
+        return arrivalArea.equals("") || good.arrivalArea.equals(arrivalArea);
+    }
+
+    private boolean filterDate(Good good){
+        return datePreferred.equals("") || good.datePreferred.equals(datePreferred);
+    }
+
+    private boolean filterContent(Good good){
+        return whatToCarry.equals("") || good.whatToCarry.equals(whatToCarry);
+    }
 
 
-    public GoodsAdapter(Firebase goodsRef, Context context) {
+    public GoodsAdapter(Firebase goodsRef, final Context context, final int filter) {
         goods=new ArrayList<>();
         this.context = context;
 
@@ -30,7 +52,22 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodViewHolder> {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Good good = dataSnapshot.getValue(Good.class);
-                goods.add(good);
+                switch (filter) {
+                    case 1:
+                        goods.add(good);
+                        break;
+                    case 2:
+                        boolean show = filterArv(good) && filterDep(good) && filterContent(good)&&filterDate(good);
+                        if (show) {
+                            goods.add(good);
+                        }
+                        break;
+                    case 3:
+                        if(good.userName.equals(userName)){
+                            goods.add(good);
+                        }
+                        break;
+                }
                 notifyDataSetChanged();
 
             }

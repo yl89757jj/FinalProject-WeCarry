@@ -33,6 +33,9 @@ public class SearchGoods extends AppCompatActivity {
             case R.id.log_out:
                 MainActivity.rootRef.unauth();
                 return true;
+            case R.id.user:
+                Intent intent = new Intent(SearchGoods.this, User.class);
+                startActivity(intent);
             default:
                 return super.onOptionsItemSelected(item);
         }

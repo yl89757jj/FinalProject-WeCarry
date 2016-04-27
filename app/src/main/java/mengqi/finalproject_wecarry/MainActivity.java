@@ -78,6 +78,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.log_out:
                 rootRef.unauth();
                 return true;
+            case R.id.user:
+                Intent intent = new Intent(MainActivity.this, User.class);
+                startActivity(intent);
             default:
                 return super.onOptionsItemSelected(item);
         }

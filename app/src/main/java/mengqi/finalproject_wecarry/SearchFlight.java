@@ -9,6 +9,7 @@ import android.view.View;
 
 public class SearchFlight extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +34,9 @@ public class SearchFlight extends AppCompatActivity {
             case R.id.log_out:
                 MainActivity.rootRef.unauth();
                 return true;
+            case R.id.user:
+                Intent intent = new Intent(SearchFlight.this, User.class);
+                startActivity(intent);
             default:
                 return super.onOptionsItemSelected(item);
         }

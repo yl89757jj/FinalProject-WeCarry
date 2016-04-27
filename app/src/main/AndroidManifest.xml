@@ -23,11 +23,16 @@
         <activity android:name=".SearchGoods" />
         <activity android:name=".SearchResult" />
         <activity android:name=".UserFlight" />
-        <activity android:name=".UserCarry"></activity><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
-     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <activity android:name=".UserCarry" />
+        <!--
+ ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <activity android:name=".User"></activity>
     </application>
 
 </manifest>

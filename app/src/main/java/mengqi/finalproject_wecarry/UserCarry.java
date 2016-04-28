@@ -102,7 +102,7 @@ public class UserCarry extends AppCompatActivity {
                 MainActivity.rootRef.unauth();
                 return true;
             case R.id.user:
-                Intent intent = new Intent(UserCarry.this, User.class);
+                Intent intent = new Intent(UserCarry.this, UserActivity.class);
                 startActivity(intent);
             default:
                 return super.onOptionsItemSelected(item);

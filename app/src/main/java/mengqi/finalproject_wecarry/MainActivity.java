@@ -3,8 +3,6 @@ package mengqi.finalproject_wecarry;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,7 +10,6 @@ import android.widget.TextView;
 
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
-import com.firebase.client.Query;
 
 public class MainActivity extends AppCompatActivity {
     public static Firebase rootRef;
@@ -26,19 +23,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Firebase.setAndroidContext(this);
         rootRef = new Firebase("https://wecarry.firebaseio.com");
-
-        authStateListener = new Firebase.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(AuthData authData) {
-                if (authData == null) {
-                    Intent intent = new Intent(MainActivity.this, LogInActivity.class);
-                    startActivity(intent);
-                } else {
-                    userName = authData.getUid();
-                }
-            }
-        };
-
 
 
         authStateListener = new Firebase.AuthStateListener() {
@@ -93,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 rootRef.unauth();
                 return true;
             case R.id.user:
-                Intent intent = new Intent(MainActivity.this, User.class);
+                Intent intent = new Intent(MainActivity.this, UserActivity.class);
                 startActivity(intent);
             default:
                 return super.onOptionsItemSelected(item);

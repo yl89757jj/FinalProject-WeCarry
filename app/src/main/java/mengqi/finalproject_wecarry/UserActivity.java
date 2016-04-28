@@ -12,7 +12,7 @@ import android.view.View;
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
 
-public class User extends AppCompatActivity {
+public class UserActivity extends AppCompatActivity {
     private Firebase.AuthStateListener authStateListener;
     private Firebase userRef;
     private RecyclerView flightRecyclerView;
@@ -20,7 +20,7 @@ public class User extends AppCompatActivity {
     private GoodsAdapter goodsAdapter;
     private RecyclerView goodsRecyclerView;
     public String email;
-    public String userName;
+    private String userName;
 
 
 
@@ -35,7 +35,7 @@ public class User extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(AuthData authData) {
                 if (authData == null) {
-                    Intent intent = new Intent(User.this, LogInActivity.class);
+                    Intent intent = new Intent(UserActivity.this, LogInActivity.class);
                     startActivity(intent);
                 } else {
                     userRef = MainActivity.rootRef;
@@ -48,10 +48,10 @@ public class User extends AppCompatActivity {
         goodsRecyclerView = (RecyclerView) findViewById(R.id.goodsRecycler_view);
 
 
-        flightsAdapter = new FlightsAdapter(MainActivity.rootRef.child("flights"), User.this,3);
+        flightsAdapter = new FlightsAdapter(MainActivity.rootRef.child("flights"), UserActivity.this,3,userName);
         flightRecyclerView.setAdapter(flightsAdapter);
 
-        goodsAdapter = new GoodsAdapter(MainActivity.rootRef.child("goods"), User.this,3);
+        goodsAdapter = new GoodsAdapter(MainActivity.rootRef.child("goods"), UserActivity.this,3,userName);
         goodsRecyclerView.setAdapter(goodsAdapter);
 
         flightRecyclerView.setHasFixedSize(true);
@@ -66,12 +66,12 @@ public class User extends AppCompatActivity {
 
 
     public void PostGoods(View view) {
-        Intent intent = new Intent(User.this, UserCarry.class);
+        Intent intent = new Intent(UserActivity.this, UserCarry.class);
         startActivity(intent);
     }
 
     public void PostFlight(View view) {
-        Intent intent = new Intent(User.this, UserFlight.class);
+        Intent intent = new Intent(UserActivity.this, UserFlight.class);
         startActivity(intent);
     }
 
@@ -88,7 +88,7 @@ public class User extends AppCompatActivity {
                 MainActivity.rootRef.unauth();
                 return true;
             case R.id.user:
-                Intent intent = new Intent(User.this, User.class);
+                Intent intent = new Intent(UserActivity.this, UserActivity.class);
                 startActivity(intent);
             default:
                 return super.onOptionsItemSelected(item);

@@ -25,8 +25,8 @@ public class SearchResult extends AppCompatActivity {
 
         RecyclerView = (RecyclerView) findViewById(R.id.resultRecycler_view);
 
-        flightsAdapter = new FlightsAdapter(MainActivity.rootRef.child("flights"), SearchResult.this,2);
-        goodsAdapter = new GoodsAdapter(MainActivity.rootRef.child("goods"), SearchResult.this,2);
+        flightsAdapter = new FlightsAdapter(MainActivity.rootRef.child("flights"), SearchResult.this,2,"");
+        goodsAdapter = new GoodsAdapter(MainActivity.rootRef.child("goods"), SearchResult.this,2,"");
          if(HomeActivity.fly) {
              RecyclerView.setAdapter(goodsAdapter);
          }else{
@@ -63,7 +63,7 @@ public class SearchResult extends AppCompatActivity {
                 MainActivity.rootRef.unauth();
                 return true;
             case R.id.user:
-                Intent intent = new Intent(SearchResult.this, User.class);
+                Intent intent = new Intent(SearchResult.this, UserActivity.class);
                 startActivity(intent);
             default:
                 return super.onOptionsItemSelected(item);

@@ -106,7 +106,7 @@ public class UserFlight extends AppCompatActivity {
                 MainActivity.rootRef.unauth();
                 return true;
             case R.id.user:
-                Intent intent = new Intent(UserFlight.this, User.class);
+                Intent intent = new Intent(UserFlight.this, UserActivity.class);
                 startActivity(intent);
             default:
                 return super.onOptionsItemSelected(item);

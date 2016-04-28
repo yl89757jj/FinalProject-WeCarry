@@ -39,7 +39,21 @@ public class UserActivity extends AppCompatActivity {
                     startActivity(intent);
                 } else {
                     userRef = MainActivity.rootRef;
-                    userName = authData.getUid();
+                    userName = authData.getUid().toString();
+                    flightsAdapter = new FlightsAdapter(MainActivity.rootRef.child("flights"), UserActivity.this, 3, userName);
+                    flightRecyclerView.setAdapter(flightsAdapter);
+
+                    goodsAdapter = new GoodsAdapter(MainActivity.rootRef.child("goods"), UserActivity.this, 3, userName);
+                    goodsRecyclerView.setAdapter(goodsAdapter);
+
+                    flightRecyclerView.setHasFixedSize(true);
+                    flightRecyclerView.setLayoutManager(new LinearLayoutManager(UserActivity.this));
+
+
+                    goodsRecyclerView.setHasFixedSize(true);
+                    goodsRecyclerView.setLayoutManager(new LinearLayoutManager(UserActivity.this));
+
+
                 }
             }
         };
@@ -48,18 +62,6 @@ public class UserActivity extends AppCompatActivity {
         goodsRecyclerView = (RecyclerView) findViewById(R.id.goodsRecycler_view);
 
 
-        flightsAdapter = new FlightsAdapter(MainActivity.rootRef.child("flights"), UserActivity.this,3,userName);
-        flightRecyclerView.setAdapter(flightsAdapter);
-
-        goodsAdapter = new GoodsAdapter(MainActivity.rootRef.child("goods"), UserActivity.this,3,userName);
-        goodsRecyclerView.setAdapter(goodsAdapter);
-
-        flightRecyclerView.setHasFixedSize(true);
-        flightRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-
-        goodsRecyclerView.setHasFixedSize(true);
-        goodsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 
     }

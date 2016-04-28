@@ -47,7 +47,7 @@ public class UserCarry extends AppCompatActivity {
                     startActivity(intent);
                 } else {
                     userRef = MainActivity.rootRef;
-                    userName = authData.getUid();
+                    userName = authData.getUid().toString();
                 }
             }
         };

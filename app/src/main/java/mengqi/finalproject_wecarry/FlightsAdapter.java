@@ -26,13 +26,9 @@ public class  FlightsAdapter extends RecyclerView.Adapter<FlightViewHolder> {
     public static String arrival = "";
     public static String departDate = "";
     public static String spaceAvailable = "";
-    public String userName;
 
 
-
-
-
-//filter boolean
+    //filter boolean
     private boolean filterDep(Flight flight){
         return departure.equals("") || flight.departure.equals(departure);
     }

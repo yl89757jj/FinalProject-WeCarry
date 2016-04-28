@@ -24,7 +24,7 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodViewHolder> {
     public String arrivalArea="";
     public String datePreferred="";
     public String whatToCarry="";
-    public String userName=MainActivity.userName;
+
 
 
 
@@ -46,7 +46,7 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodViewHolder> {
     }
 
 
-    public GoodsAdapter(Firebase goodsRef, final Context context, final int filter) {
+    public GoodsAdapter(Firebase goodsRef, final Context context, final int filter, final String userName) {
         goods=new ArrayList<>();
         this.context = context;
 

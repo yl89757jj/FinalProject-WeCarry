@@ -30,10 +30,10 @@ public class HomeActivity extends AppCompatActivity {
         goodsRecyclerView = (RecyclerView) findViewById(R.id.goodsRecycler_view);
 
 
-        flightsAdapter = new FlightsAdapter(MainActivity.rootRef.child("flights"), HomeActivity.this,1);
+        flightsAdapter = new FlightsAdapter(MainActivity.rootRef.child("flights"), HomeActivity.this,1,"");
         flightRecyclerView.setAdapter(flightsAdapter);
 
-        goodsAdapter = new GoodsAdapter(MainActivity.rootRef.child("goods"), HomeActivity.this,1);
+        goodsAdapter = new GoodsAdapter(MainActivity.rootRef.child("goods"), HomeActivity.this,1,"");
         goodsRecyclerView.setAdapter(goodsAdapter);
 
         flightRecyclerView.setHasFixedSize(true);
@@ -49,13 +49,13 @@ public class HomeActivity extends AppCompatActivity {
 
     public void SearchGoods(View view) {
         fly = true;
-        Intent intent = new Intent(HomeActivity.this, SearchGoods.class);
+        Intent intent = new Intent(HomeActivity.this, SearchResult.class);
         startActivity(intent);
     }
 
     public void SearchFlight(View view) {
         fly = false;
-        Intent intent = new Intent(HomeActivity.this, SearchFlight.class);
+        Intent intent = new Intent(HomeActivity.this, SearchResult.class);
         startActivity(intent);
     }
 
@@ -72,7 +72,7 @@ public class HomeActivity extends AppCompatActivity {
                 MainActivity.rootRef.unauth();
                 return true;
             case R.id.user:
-                Intent intent = new Intent(HomeActivity.this, User.class);
+                Intent intent = new Intent(HomeActivity.this, UserActivity.class);
                 startActivity(intent);
             default:
                 return super.onOptionsItemSelected(item);

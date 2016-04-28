@@ -20,11 +20,11 @@ import java.util.List;
 public class GoodsAdapter extends RecyclerView.Adapter<GoodViewHolder> {
     private List<Good> goods;
     private Context context;
-    public String departureArea="Shanghai";
-    public String arrivalArea="";
-    public String datePreferred="";
-    public String whatToCarry="";
-    public String userName=MainActivity.userName;
+    public static String departureArea = "Shanghai";
+    public static String arrivalArea = "";
+    public static String datePreferred = "";
+    public static String whatToCarry = "";
+    public String userName = "";
 
 
 

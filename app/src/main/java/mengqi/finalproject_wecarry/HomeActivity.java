@@ -1,5 +1,7 @@
 package mengqi.finalproject_wecarry;
 
+import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,11 +10,22 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.Spinner;
 
 import com.firebase.client.Firebase;
 
+import java.util.Calendar;
+
 public class HomeActivity extends AppCompatActivity {
     public static boolean fly;
+    private Spinner departure;
+    private Spinner arrival;
+    private Button button;
+    private int year, month, day;
+    private String departDate;
+    private static final int DILOG_ID = 0;
     private RecyclerView flightRecyclerView;
     private FlightsAdapter flightsAdapter;
     private GoodsAdapter goodsAdapter;
@@ -24,6 +37,11 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         Firebase.setAndroidContext(this);
+        final Calendar calendar = Calendar.getInstance();
+        year = calendar.get(Calendar.YEAR);
+        month = calendar.get(Calendar.MONTH);
+        day = calendar.get(Calendar.DAY_OF_MONTH);
+
 
 
         flightRecyclerView = (RecyclerView) findViewById(R.id.flightRecycler_view);
@@ -44,19 +62,54 @@ public class HomeActivity extends AppCompatActivity {
         goodsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 
+        departure = (Spinner) findViewById(R.id.departure_cityH);
+        arrival = (Spinner) findViewById(R.id.arrival_cityH);
+
+
     }
+
+    public void datePick(View view) {
+        button = (Button) findViewById(R.id.depart_dateH);
+        showDialog(DILOG_ID);
+    }
+
+    @Override
+    protected Dialog onCreateDialog(int id) {
+        if (id == DILOG_ID)
+            return new DatePickerDialog(this, dpickListener, year, month, day);
+        return null;
+    }
+
+    private DatePickerDialog.OnDateSetListener dpickListener = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int years, int monthOfYear, int dayOfMonth) {
+            year = years;
+            month = monthOfYear + 1;
+            day = dayOfMonth;
+            button.setText(month + "/" + day + "/" + year);
+        }
+    };
 
 
     public void SearchGoods(View view) {
         fly = true;
-        Intent intent = new Intent(HomeActivity.this, SearchGoods.class);
+        Intent intent = new Intent(HomeActivity.this, SearchResult.class);
         startActivity(intent);
+        GoodsAdapter.departureArea = departure.getSelectedItem().toString();
+        GoodsAdapter.arrivalArea = arrival.getSelectedItem().toString();
+        departDate = month + "/" + day + "/" + year;
+        GoodsAdapter.datePreferred = departDate;
+
     }
 
     public void SearchFlight(View view) {
         fly = false;
-        Intent intent = new Intent(HomeActivity.this, SearchFlight.class);
+        Intent intent = new Intent(HomeActivity.this, SearchResult.class);
         startActivity(intent);
+        FlightsAdapter.departure = departure.getSelectedItem().toString();
+        FlightsAdapter.arrival = arrival.getSelectedItem().toString();
+        departDate = month + "/" + day + "/" + year;
+        FlightsAdapter.departDate = departDate;
     }
 
     @Override

@@ -10,6 +10,80 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="mengqi.finalproject_wecarry.SearchFlight">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Departure:" />
+
+        <Spinner
+            android:id="@+id/departure_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/city_names" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Arrival:" />
+
+        <Spinner
+            android:id="@+id/arrival_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/city_names" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Flight No.:" />
+
+        <EditText
+            android:id="@+id/fight_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Departure Date:" />
+
+        <Button
+            android:id="@+id/depart_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/MyButton"
+            android:onClick="datePick" />
+    </LinearLayout>
+
 
     <Button
         android:id="@+id/search_flight"

@@ -1,8 +1,8 @@
 package mengqi.finalproject_wecarry;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
@@ -94,4 +94,18 @@ public class User extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MainActivity.rootRef.addAuthStateListener(authStateListener);
+    }
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MainActivity.rootRef.removeAuthStateListener(authStateListener);
+    }
+
 }

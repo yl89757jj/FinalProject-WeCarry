@@ -1,7 +1,6 @@
 package mengqi.finalproject_wecarry;
 
 import android.content.Context;
-import android.os.Debug;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,11 +20,14 @@ import java.util.List;
 public class  FlightsAdapter extends RecyclerView.Adapter<FlightViewHolder> {
     public List<Flight> flights = new ArrayList<>();
     private Context context;
-    public String departure="New York";
-    public String arrival="";
-    public String departDate="";
-    public String spaceAvailable="";
-    public String userName="2d740ae4-54f7-4462-bcf2-69cde0f4330f";
+
+
+    public static String departure = "New York";
+    public static String arrival = "";
+    public static String departDate = "";
+    public static String spaceAvailable = "";
+    public String userName;
+
 
 
 

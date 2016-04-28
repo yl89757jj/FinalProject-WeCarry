@@ -50,7 +50,7 @@ public class  FlightsAdapter extends RecyclerView.Adapter<FlightViewHolder> {
     }
 
 
-    public FlightsAdapter(Firebase flightsRef, Context context, final int filter) {
+    public FlightsAdapter(Firebase flightsRef, Context context, final int filter, final String userName) {
         this.context = context;
         flights = new ArrayList<>();
 

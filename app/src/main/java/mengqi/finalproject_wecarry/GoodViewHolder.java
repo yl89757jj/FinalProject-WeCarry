@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,7 +18,8 @@ public class GoodViewHolder extends RecyclerView.ViewHolder {
     public TextView goodsFlex;
     public TextView goodsContent;
     public TextView goodsTime;
-    public ImageView imageView;
+    public TextView specialNote;
+
     private Context context;
 
 
@@ -28,10 +28,10 @@ public class GoodViewHolder extends RecyclerView.ViewHolder {
         goodsCard = (CardView) itemView.findViewById(R.id.goods_card);
         goodsDeparture = (TextView) itemView.findViewById(R.id.goods_departure);
         goodsArrival = (TextView) itemView.findViewById(R.id.goods_arrival);
-        goodsFlex = (TextView) itemView.findViewById(R.id.goods_flexibility);
+//        goodsFlex = (TextView) itemView.findViewById(R.id.goods_flexibility);
         goodsContent = (TextView) itemView.findViewById(R.id.goods_content);
         goodsTime = (TextView) itemView.findViewById(R.id.goods_time);
-        imageView = (ImageView) itemView.findViewById(R.id.photo);
+//        specialNote = (TextView) itemView.findViewById(R.id.special_note);
         this.context = context;
     }
 
@@ -45,7 +45,7 @@ public class GoodViewHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, goodsContent.getText(), Toast.LENGTH_SHORT).show();
-                Intent intent= new Intent(v.getContext(),GoodsActivity.class);
+                Intent intent = new Intent(v.getContext(), GoodsActivity.class);
                 v.getContext().startActivity(intent);
 
             }

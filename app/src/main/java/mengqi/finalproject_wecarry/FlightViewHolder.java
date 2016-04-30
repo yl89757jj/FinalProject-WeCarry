@@ -18,7 +18,6 @@ public class FlightViewHolder extends RecyclerView.ViewHolder {
     public TextView flightSpace;
     public TextView flightTime;
     public TextView flightArrival;
-    public TextView flightNote;
 
 
     // public ImageView personPhoto;
@@ -32,7 +31,7 @@ public class FlightViewHolder extends RecyclerView.ViewHolder {
         flightSpace = (TextView) itemView.findViewById(R.id.flight_space);
         flightTime = (TextView) itemView.findViewById(R.id.flight_time);
         flightArrival = (TextView) itemView.findViewById(R.id.flight_arrival);
-        flightNote = (TextView) itemView.findViewById(R.id.flight_note);
+
         this.context = context;
     }
 

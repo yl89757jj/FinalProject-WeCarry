@@ -21,7 +21,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Departure:" />
+            android:text="Departure:"
+            style="@style/normalText2" />
 
         <Spinner
             android:id="@+id/departure_city"
@@ -39,7 +40,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Arrival:" />
+            android:text="Arrival:"
+            style="@style/normalText2" />
 
         <Spinner
             android:id="@+id/arrival_city"
@@ -57,13 +59,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Flight No.:" />
+            android:text="Flight No.:"
+            style="@style/normalText2" />
 
         <EditText
             android:id="@+id/fight_no"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textCapWords" />
+            android:inputType="textCapWords"
+            style="@style/normalText2" />
     </LinearLayout>
 
     <LinearLayout
@@ -75,13 +79,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Departure Date:" />
+            android:text="Departure Date:"
+            style="@style/normalText2" />
 
         <Button
             android:id="@+id/depart_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/MyButton"
             android:onClick="datePick" />
     </LinearLayout>
 
@@ -95,7 +99,8 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="Space Available:" />
+            android:text="Space Available:"
+            style="@style/normalText2" />
 
         <EditText
             android:id="@+id/space_available"
@@ -103,13 +108,15 @@
             android:layout_height="0dp"
             android:layout_weight="3"
             android:gravity="top"
-            android:inputType="textMultiLine" />
+            android:inputType="textMultiLine"
+            style="@style/normalText2" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="Special Note:" />
+            android:text="Special Note:"
+            style="@style/normalText2" />
 
         <EditText
             android:id="@+id/special_note"
@@ -117,7 +124,8 @@
             android:layout_height="0dp"
             android:layout_weight="3"
             android:gravity="top"
-            android:inputType="textMultiLine" />
+            android:inputType="textMultiLine"
+            style="@style/normalText2" />
     </LinearLayout>
 
     <Button

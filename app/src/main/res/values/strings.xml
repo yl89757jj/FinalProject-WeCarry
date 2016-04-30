@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">WeCarry</string>
     <string-array name="city_names">
+        <item> </item>
         <item>New York</item>
         <item>Washington D.C</item>
         <item>Boston</item>

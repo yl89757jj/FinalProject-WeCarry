@@ -25,7 +25,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="Flying"
-            android:textSize="25sp" />
+            style="@style/title" />
 
 
         <android.support.v7.widget.RecyclerView
@@ -43,7 +43,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="Carry Needed"
-            android:textSize="25sp" />
+            style="@style/title" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/goodsRecycler_view"
@@ -69,7 +69,7 @@
             android:layout_width="0dp"
             android:layout_weight="2"
             android:layout_height="wrap_content"
-            style="@style/normalText"
+            style="@style/searchText"
             android:text="Departure:" />
 
         <Spinner
@@ -82,7 +82,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_weight="2"
-            style="@style/normalText"
+            style="@style/searchText"
             android:layout_height="wrap_content"
             android:text="Arrival:" />
 
@@ -97,7 +97,7 @@
             android:layout_width="0dp"
             android:layout_weight="2"
             android:layout_height="wrap_content"
-            style="@style/normalText"
+            style="@style/searchText"
             android:text="Date:" />
 
         <Button

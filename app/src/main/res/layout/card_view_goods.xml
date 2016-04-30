@@ -28,25 +28,25 @@
 
             <TextView
                 android:id="@+id/goods_departure"
+                style="@style/headLine"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:text="New York"
-                android:textSize="25sp" />
+                android:text="New York" />
 
             <TextView
                 android:id="@+id/arrow"
+                style="@style/headLine"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="  -->  "
-                android:textSize="30sp" />
+                android:text="  -->  " />
 
             <TextView
                 android:id="@+id/goods_arrival"
+                style="@style/headLine"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Beijing"
-                android:textSize="25sp" />
+                android:text="Beijing" />
         </LinearLayout>
 
         <LinearLayout
@@ -56,17 +56,17 @@
 
             <TextView
                 android:id="@+id/goods_timeT"
+                style="@style/normalText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Date Preferred:"
-                android:textSize="20sp" />
+                android:text="Date Preferred:" />
 
             <TextView
                 android:id="@+id/goods_time"
+                style="@style/normalText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" 12.15  "
-                android:textSize="20sp" />
+                android:text=" 12.15  " />
         </LinearLayout>
 
         <LinearLayout
@@ -76,23 +76,18 @@
 
             <TextView
                 android:id="@+id/goods_contentT"
+                style="@style/normalText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="What to Carry:"
-                android:textSize="20sp" />
+                android:text="What to Carry:" />
 
             <TextView
                 android:id="@+id/goods_content"
+                style="@style/normalText"
                 android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:text=" Boom shakalaka  "
-                android:textSize="20sp" />
+                android:layout_height="wrap_content"
+                android:text=" Boom shakalaka  " />
         </LinearLayout>
-
-
-
-
 
 
     </LinearLayout>

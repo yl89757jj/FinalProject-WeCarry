@@ -26,7 +26,6 @@ public class FlightViewHolder extends RecyclerView.ViewHolder {
     public FlightViewHolder(View itemView, final Context context) {
         super(itemView);
         flightCard = (CardView) itemView.findViewById(R.id.card_flight);
-        flightNum = (TextView) itemView.findViewById(R.id.flight_number);
         flightDep = (TextView) itemView.findViewById(R.id.flight_departure);
         flightSpace = (TextView) itemView.findViewById(R.id.flight_space);
         flightTime = (TextView) itemView.findViewById(R.id.flight_time);

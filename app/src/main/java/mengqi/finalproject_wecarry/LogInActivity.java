@@ -55,6 +55,7 @@ public class LogInActivity extends AppCompatActivity {
         String email = emailEditText.getText().toString();
         String password = passwordEditText.getText().toString();
 
+        if (email.substring(email.length() - 4, email.length()).equals(".edu")) {
         firebase.createUser(email, password, new Firebase.ValueResultHandler<Map<String, Object>>() {
             @Override
             public void onSuccess(Map<String, Object> result) {
@@ -66,6 +67,9 @@ public class LogInActivity extends AppCompatActivity {
                 Toast.makeText(LogInActivity.this, "Unable to Sign Up: " + firebaseError.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+        } else {
+            Toast.makeText(LogInActivity.this, "Please Sign up with a \".edu\" email", Toast.LENGTH_LONG).show();
+        }
     }
 }
 

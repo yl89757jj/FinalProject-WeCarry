@@ -1,9 +1,13 @@
 package mengqi.finalproject_wecarry;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Base64;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +22,7 @@ public class GoodViewHolder extends RecyclerView.ViewHolder {
     public TextView goodsContent;
     public TextView goodsTime;
     private Context context;
+    private ImageView PhotoView;
 
 
     public GoodViewHolder(View itemView, final Context context) {
@@ -28,6 +33,7 @@ public class GoodViewHolder extends RecyclerView.ViewHolder {
         goodsFlex = (TextView) itemView.findViewById(R.id.goods_flexibility);
         goodsContent = (TextView) itemView.findViewById(R.id.goods_content);
         goodsTime = (TextView) itemView.findViewById(R.id.goods_time);
+        PhotoView = (ImageView) itemView.findViewById(R.id.photo);
         this.context = context;
     }
 
@@ -37,6 +43,7 @@ public class GoodViewHolder extends RecyclerView.ViewHolder {
         goodsFlex.setText(good.flexibility);
         goodsArrival.setText(good.arrivalArea);
         goodsDeparture.setText(good.departureArea);
+        PhotoView.setImageBitmap(byteStringToBitmap(good.photo));
 
         goodsCard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,5 +51,10 @@ public class GoodViewHolder extends RecyclerView.ViewHolder {
                 Toast.makeText(context, goodsContent.getText(), Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private Bitmap byteStringToBitmap(String byteString) {
+        byte[] imageAsByte = Base64.decode(byteString.getBytes(), Base64.DEFAULT);
+        return BitmapFactory.decodeByteArray(imageAsByte, 0, imageAsByte.length);
     }
 }

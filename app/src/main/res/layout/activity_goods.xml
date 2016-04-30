@@ -20,13 +20,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Departure area" />
+            android:text="Departure area"
+            style="@style/normalText2" />
 
         <TextView
             android:id="@+id/select_departure"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:text=""
+            style="@style/normalText" />
 
     </LinearLayout>
 
@@ -39,13 +41,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Arrival Area:" />
+            android:text="Arrival Area:"
+            style="@style/normalText2" />
 
         <TextView
             android:id="@+id/select_arrival"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:text=""
+            style="@style/normalText" />
 
     </LinearLayout>
 
@@ -58,13 +62,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Date preferred:" />
+            android:text="Date preferred:"
+            style="@style/normalText2" />
 
         <TextView
             android:id="@+id/select_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:text=""
+            style="@style/normalText" />
 
     </LinearLayout>
 
@@ -77,13 +83,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Flexibility:" />
+            android:text="Flexibility:"
+            style="@style/normalText2" />
 
         <TextView
             android:id="@+id/select_flexibility"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:text=""
+            style="@style/normalText" />
 
     </LinearLayout>
 
@@ -92,19 +100,20 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="What to carry:" />
+            android:text="What to carry:"
+            style="@style/normalText2" />
 
         <TextView
             android:id="@+id/select_what_to_carry"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
             android:gravity="top"
+            style="@style/normalText"
             />
     </LinearLayout>
 
@@ -117,12 +126,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Photo" />
+            android:text="Photo"
+            style="@style/normalText2" />
 
         <ImageView
             android:id="@+id/select_photo"
-            android:layout_width="150dp"
-            android:layout_height="150dp" />
+            android:layout_width="400dp"
+            android:layout_height="300dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -136,6 +146,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:text="Send Message"
+            style="@style/normalText2"
         />
 
         <EditText
@@ -144,7 +155,8 @@
             android:layout_height="0dp"
             android:layout_weight="5"
             android:gravity="top"
-            android:inputType="textMultiLine" />
+            android:inputType="textMultiLine"
+            style="@style/normalText" />
     </LinearLayout>
 
 

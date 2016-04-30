@@ -3,23 +3,36 @@ package mengqi.finalproject_wecarry;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Base64;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Calendar;
 
 public class UserCarry extends AppCompatActivity {
     private Firebase.AuthStateListener authStateListener;
+    private static final int REQUEST_TAKE_PHOTO = 1;
+    private static final int REQUEST_PICK_PHOTO = 2;
     private Spinner departureArea;
     private Spinner arrivalArea;
     private String datePreferred;
@@ -27,10 +40,12 @@ public class UserCarry extends AppCompatActivity {
     private EditText whatToCarry;
     private Firebase userRef;
     private String userName;
-    private String userEmail="";
     private Button button;
     private int year, month, day;
     private static final int DILOG_ID = 0;
+    private ImageView PhotoImageView;
+    private File photoFile;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +55,7 @@ public class UserCarry extends AppCompatActivity {
         year = calendar.get(Calendar.YEAR);
         month = calendar.get(Calendar.MONTH);
         day = calendar.get(Calendar.DAY_OF_MONTH);
+        PhotoImageView = (ImageView) findViewById(R.id.image_photo);
         authStateListener = new Firebase.AuthStateListener() {
             @Override
             public void onAuthStateChanged(AuthData authData) {
@@ -82,13 +98,94 @@ public class UserCarry extends AppCompatActivity {
         arrivalArea = (Spinner) findViewById(R.id.arrival_area);
         datePreferred = month + "/" + day + "/" + year;
         flexibility = (Spinner) findViewById(R.id.flexibility);
+        String byteString = bitmapToByteString(((BitmapDrawable) PhotoImageView.getDrawable()).getBitmap());
         whatToCarry = (EditText) findViewById(R.id.what_to_carry);
         Good goods = new Good(departureArea.getSelectedItem().toString(), arrivalArea.getSelectedItem().toString(), datePreferred, flexibility.getSelectedItem().toString(),
-                whatToCarry.getText().toString(), userName,userEmail);
+                whatToCarry.getText().toString(), userName, byteString);
         userRef.child("goods").push().setValue(goods);
         Intent intent = new Intent(UserCarry.this, HomeActivity.class);
         startActivity(intent);
     }
+
+    public void takeImage(View view) {
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        photoFile = createImageFile();//tell the camera where to save the image
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoFile));
+        startActivityForResult(intent, REQUEST_TAKE_PHOTO);
+    }
+
+    private File createImageFile() {
+        String imageFileName = "JPEG" + System.currentTimeMillis() + ".jpg";
+        File storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+        return new File(storageDir.getAbsolutePath(), imageFileName);
+    }
+
+    public void addImage(View view) {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(intent, REQUEST_PICK_PHOTO);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode != RESULT_OK)
+            return;
+        if (requestCode == REQUEST_TAKE_PHOTO) {
+            setPic();
+        } else if (requestCode == REQUEST_PICK_PHOTO) {
+            try {
+                decodeUri(data.getData());
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void setPic() {
+        int targetW = PhotoImageView.getWidth();
+        int targetH = PhotoImageView.getHeight();
+
+        BitmapFactory.Options bmpOptions = new BitmapFactory.Options();
+        bmpOptions.inJustDecodeBounds = true;
+        BitmapFactory.decodeFile(photoFile.getAbsolutePath(), bmpOptions);
+
+        int photoW = bmpOptions.outWidth;
+        int photoH = bmpOptions.outHeight;
+        int scaleFactor = Math.min(photoW / targetW, photoH / targetH);
+
+        bmpOptions.inJustDecodeBounds = false;
+        bmpOptions.inSampleSize = scaleFactor;
+        Bitmap image = BitmapFactory.decodeFile(photoFile.getAbsolutePath(), bmpOptions);
+        PhotoImageView.setImageBitmap(image);
+    }
+
+
+    private void decodeUri(Uri uri) throws FileNotFoundException {
+        int targetW = PhotoImageView.getWidth();
+        int targetH = PhotoImageView.getHeight();
+
+        BitmapFactory.Options bmpOptions = new BitmapFactory.Options();
+        bmpOptions.inJustDecodeBounds = true;
+        BitmapFactory.decodeStream(getContentResolver().openInputStream(uri), null, bmpOptions);
+
+        int photoW = bmpOptions.outWidth;
+        int photoH = bmpOptions.outHeight;
+        int scaleFactor = Math.min(photoW / targetW, photoH / targetH);
+
+        bmpOptions.inJustDecodeBounds = false;
+        bmpOptions.inSampleSize = scaleFactor;
+        Bitmap image = BitmapFactory.decodeStream(getContentResolver().openInputStream(uri), null, bmpOptions);
+        PhotoImageView.setImageBitmap(image);
+    }
+
+    private String bitmapToByteString(Bitmap bitmap) {
+        ByteArrayOutputStream byteStream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteStream);
+        byte[] byteArray = byteStream.toByteArray();
+        return Base64.encodeToString(byteArray, Base64.DEFAULT);
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

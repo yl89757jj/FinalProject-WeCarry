@@ -4,10 +4,10 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class GoodsActivity extends AppCompatActivity {
     private TextView departureArea;
@@ -37,7 +37,7 @@ public class GoodsActivity extends AppCompatActivity {
         flexibility = (TextView) findViewById(R.id.select_flexibility);
         whatToCarry = (TextView) findViewById(R.id.select_what_to_carry);
         photo = (ImageView) findViewById(R.id.select_photo);
-        message=edit_message.getText().toString();
+
         toEmail=extras.getString("EXEM");
 
 
@@ -51,13 +51,14 @@ public class GoodsActivity extends AppCompatActivity {
     }
 
 
-    public void sendEmail() {
-//        Intent intent = new Intent(Intent.ACTION_SENDTO);
-//        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
-//        intent.putExtra(Intent.EXTRA_EMAIL, toEmail);
-//        intent.putExtra(Intent.EXTRA_SUBJECT, "Message From WeCarry");
-//        intent.putExtra(Intent.EXTRA_TEXT, message);
-//        startActivity(intent);
+    public void sendEmail(View view) {
+        message = edit_message.getText().toString();
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{toEmail});
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Message From WeCarry");
+        intent.putExtra(Intent.EXTRA_TEXT, message);
+        startActivity(intent);
 
 //        Intent emailIntent = new Intent(Intent.ACTION_SEND);
 //        emailIntent.setData(Uri.parse("mailto:"+toEmail));

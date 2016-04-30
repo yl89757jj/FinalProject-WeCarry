@@ -4,8 +4,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class FlightActivity extends AppCompatActivity {
     private TextView departureDate;
@@ -14,16 +15,16 @@ public class FlightActivity extends AppCompatActivity {
     private TextView flightNo;
     private TextView spaceAvaible;
     private TextView specialNote;
-    private String myEmail;
+    private EditText messageText;
     private String toEmail;
-    private String message;
+
     private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flight);
-        intent=getIntent();
+        intent = getIntent();
         Bundle extras = intent.getExtras();
         departureDate = (TextView) findViewById(R.id.select_depart_date);
         arrival = (TextView) findViewById(R.id.select_arrival_city);
@@ -31,8 +32,10 @@ public class FlightActivity extends AppCompatActivity {
         flightNo = (TextView) findViewById(R.id.select_fight_no);
         spaceAvaible = (TextView) findViewById(R.id.select_space_available);
         specialNote = (TextView) findViewById(R.id.select_special_note);
+        messageText = (EditText) findViewById(R.id.message);
 
-        toEmail=extras.getString("EEM");
+
+        toEmail = extras.getString("EEM");
         departure.setText(extras.getString("EDE"));
         arrival.setText(extras.getString("EAR"));
         departureDate.setText(extras.getString("EDA"));
@@ -42,9 +45,19 @@ public class FlightActivity extends AppCompatActivity {
 
     }
 
-    public void sendEmail1() {
+    public void sendEmail1(View view) {
+        String message = messageText.getText().toString();
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:"));
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{toEmail});
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Message From WeCarry");
+        intent.putExtra(Intent.EXTRA_TEXT, message);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
 
-//        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+//        Intent emailIntent = new Intent(Intent.ACT
+// ION_SEND);
 //        emailIntent.setData(Uri.parse("mailto:"));
 //        emailIntent.putExtra(Intent.EXTRA_EMAIL, toEmail);
 //        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Message From WeCarry");

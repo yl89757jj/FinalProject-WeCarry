@@ -149,6 +149,6 @@
         android:layout_gravity="center"
         android:layout_weight="1"
         android:gravity="center"
-        android:onClick="sendEmail"
+        android:onClick="sendEmail1"
         android:text="Send" />
 </LinearLayout>

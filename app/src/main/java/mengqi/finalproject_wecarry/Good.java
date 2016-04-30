@@ -1,9 +1,13 @@
 package mengqi.finalproject_wecarry;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by Lu on 2/23/2016.
  */
 public class Good {
+
     public String departureArea;
     public String arrivalArea;
     public String datePreferred;
@@ -11,6 +15,7 @@ public class Good {
     public String whatToCarry;
     public String userEmail;
     public String photo;
+
 
 
     public Good() {
@@ -36,4 +41,5 @@ public class Good {
         Good good = (Good) object;
         return whatToCarry == good.whatToCarry;
     }
+
 }

@@ -1,5 +1,8 @@
 package mengqi.finalproject_wecarry;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by Lu on 2/23/2016.
  */
@@ -39,5 +42,6 @@ public class Flight {
         Flight flight = (Flight) object;
         return number.equals(flight.number);
     }
+
 
 }

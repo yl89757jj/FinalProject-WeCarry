@@ -28,10 +28,8 @@ public class GoodViewHolder extends RecyclerView.ViewHolder {
         goodsCard = (CardView) itemView.findViewById(R.id.goods_card);
         goodsDeparture = (TextView) itemView.findViewById(R.id.goods_departure);
         goodsArrival = (TextView) itemView.findViewById(R.id.goods_arrival);
-//        goodsFlex = (TextView) itemView.findViewById(R.id.goods_flexibility);
         goodsContent = (TextView) itemView.findViewById(R.id.goods_content);
         goodsTime = (TextView) itemView.findViewById(R.id.goods_time);
-//        specialNote = (TextView) itemView.findViewById(R.id.special_note);
         this.context = context;
     }
 
@@ -40,15 +38,22 @@ public class GoodViewHolder extends RecyclerView.ViewHolder {
         goodsContent.setText(good.whatToCarry);
         goodsArrival.setText(good.arrivalArea);
         goodsDeparture.setText(good.departureArea);
-
         goodsCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, goodsContent.getText(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(v.getContext(), GoodsActivity.class);
-                v.getContext().startActivity(intent);
 
+
+                intent.putExtra("EXDE",good.departureArea);
+                intent.putExtra("EXAR",good.arrivalArea);
+                intent.putExtra("EXDA",good.datePreferred);
+                intent.putExtra("EXWH",good.whatToCarry);
+                intent.putExtra("EXFL",good.flexibility);
+                intent.putExtra("EXEM",good.userEmail);
+                intent.putExtra("EXPO",good.photo);
+                v.getContext().startActivity(intent);
             }
+
         });
     }
 

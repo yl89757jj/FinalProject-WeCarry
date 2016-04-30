@@ -39,7 +39,6 @@ public class UserCarry extends AppCompatActivity {
     private Spinner flexibility;
     private EditText whatToCarry;
     private Firebase userRef;
-    private String userName;
     private String userEmail;
     private Button button;
     private int year, month, day;
@@ -65,7 +64,6 @@ public class UserCarry extends AppCompatActivity {
                     startActivity(intent);
                 } else {
                     userRef = MainActivity.rootRef;
-                    userName = authData.getUid().toString();
                     userEmail=authData.getProviderData().get("email").toString();
 
                 }

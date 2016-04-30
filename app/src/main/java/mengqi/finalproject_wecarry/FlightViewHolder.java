@@ -43,8 +43,14 @@ public class FlightViewHolder extends RecyclerView.ViewHolder {
         flightCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, flightNum.getText(), Toast.LENGTH_SHORT).show();
                 Intent intent= new Intent(v.getContext(),FlightActivity.class);
+                intent.putExtra("EDE",flight.departure);
+                intent.putExtra("EAR",flight.arrival);
+                intent.putExtra("EDA",flight.departDate);
+                intent.putExtra("ESP",flight.spaceAvailable);
+                intent.putExtra("ENO",flight.specialNote);
+                intent.putExtra("ENU",flight.number);
+                intent.putExtra("EEM",flight.userEmail);
                 v.getContext().startActivity(intent);
 
             }

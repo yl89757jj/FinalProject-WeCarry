@@ -1,6 +1,7 @@
 package mengqi.finalproject_wecarry;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -34,7 +35,7 @@ public class GoodViewHolder extends RecyclerView.ViewHolder {
     public void bind(final Good good) {
         goodsTime.setText(good.datePreferred);
         goodsContent.setText(good.whatToCarry);
-        goodsFlex.setText(good.flexibility);
+//        goodsFlex.setText(good.flexibility);
         goodsArrival.setText(good.arrivalArea);
         goodsDeparture.setText(good.departureArea);
 
@@ -42,7 +43,12 @@ public class GoodViewHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, goodsContent.getText(), Toast.LENGTH_SHORT).show();
+                Intent intent= new Intent(v.getContext(),GoodsActivity.class);
+                //intent.putExtra("Good", good);
+                v.getContext().startActivity(intent);
+
             }
         });
     }
+
 }

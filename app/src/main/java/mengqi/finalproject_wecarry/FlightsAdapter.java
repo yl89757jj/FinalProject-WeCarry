@@ -22,10 +22,10 @@ public class  FlightsAdapter extends RecyclerView.Adapter<FlightViewHolder> {
     private Context context;
 
 
-    public static String departure = "New York";
+    public static String departure = "";
     public static String arrival = "";
     public static String departDate = "";
-    public static String spaceAvailable = "";
+
 
 
     //filter boolean
@@ -41,9 +41,9 @@ public class  FlightsAdapter extends RecyclerView.Adapter<FlightViewHolder> {
         return arrival.equals("") || flight.arrival.equals(arrival);
     }
 
-    private boolean filterSpc(Flight flight){
-        return spaceAvailable.equals("") || flight.spaceAvailable.equals(spaceAvailable);
-    }
+//    private boolean filterSpc(Flight flight){
+//        return spaceAvailable.equals("") || flight.spaceAvailable.equals(spaceAvailable);
+//    }
 
 
     public FlightsAdapter(Firebase flightsRef, Context context, final int filter, final String userName) {
@@ -59,7 +59,7 @@ public class  FlightsAdapter extends RecyclerView.Adapter<FlightViewHolder> {
                         flights.add(flight);
                         break;
                     case 2:
-                        boolean show = filterArv(flight) && filterDep(flight) && filterSpc(flight)&&filterDate(flight);
+                        boolean show = filterArv(flight) && filterDep(flight) &&filterDate(flight);//&& filterSpc(flight);
                         if (show) {
                             flights.add(flight);
                         }

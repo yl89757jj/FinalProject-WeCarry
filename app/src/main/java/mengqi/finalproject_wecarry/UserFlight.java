@@ -28,6 +28,7 @@ public class UserFlight extends AppCompatActivity {
     private EditText specialNote;
     private Firebase userRef;
     private String userName;
+    private String userEmail;
     private Button button;
     private int year, month, day;
     private static final int DILOG_ID = 0;
@@ -79,7 +80,7 @@ public class UserFlight extends AppCompatActivity {
         }
     };
 
-    public void sumbitFlight(View view) {
+    public void submitFlight(View view) {
         departure = (Spinner) findViewById(R.id.departure_city);
         arrival = (Spinner) findViewById(R.id.arrival_city);
         flightNo = (EditText) findViewById(R.id.fight_no);
@@ -87,7 +88,7 @@ public class UserFlight extends AppCompatActivity {
         spaceAvaible = (EditText) findViewById(R.id.space_available);
         specialNote = (EditText) findViewById(R.id.special_note);
         Flight flight = new Flight(departure.getSelectedItem().toString(), arrival.getSelectedItem().toString(), flightNo.getText().toString(), departDate,
-                spaceAvaible.getText().toString(), specialNote.getText().toString(), userName);
+                spaceAvaible.getText().toString(), specialNote.getText().toString(), userName,userEmail);
         userRef.child("flights").push().setValue(flight);
         Intent intent = new Intent(UserFlight.this, HomeActivity.class);
         startActivity(intent);

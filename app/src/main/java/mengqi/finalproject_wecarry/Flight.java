@@ -13,15 +13,16 @@ public class Flight {
 
     public String specialNote;
     public String userName;
+    public String userEmail;
 
 
 
     public Flight() {
-        this("", "", "", "", "", "", "");
+        this("", "", "", "", "", "", "","");
     }
 
     public Flight(String departure, String arrival, String number, String departDate,
-                  String spaceAvailable, String specialNote, String userName) {
+                  String spaceAvailable, String specialNote, String userName,String userEmail) {
         this.departure = departure;
         this.arrival = arrival;
         this.number = number;
@@ -29,7 +30,8 @@ public class Flight {
         this.spaceAvailable = spaceAvailable;
         this.specialNote = specialNote;
         this.userName = userName;
-        //this.fligtId=fligtId;
+        this.userEmail=userEmail;
+
     }
 
     @Override
@@ -39,7 +41,7 @@ public class Flight {
         }
 
         Flight flight = (Flight) object;
-        return number.equals(flight.number);//there should be a particular var for each flight
+        return number.equals(flight.number);
     }
 
 }

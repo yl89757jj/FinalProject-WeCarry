@@ -20,11 +20,11 @@ import java.util.List;
 public class GoodsAdapter extends RecyclerView.Adapter<GoodViewHolder> {
     private List<Good> goods;
     private Context context;
-    public static String departureArea = "Shanghai";
+    public static String departureArea = "";
     public static String arrivalArea = "";
     public static String datePreferred = "";
-    public static String whatToCarry = "";
-    public String userName = "";
+
+
 
 
 
@@ -41,9 +41,9 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodViewHolder> {
         return datePreferred.equals("") || good.datePreferred.equals(datePreferred);
     }
 
-    private boolean filterContent(Good good){
-        return whatToCarry.equals("") || good.whatToCarry.equals(whatToCarry);
-    }
+//    private boolean filterContent(Good good){
+//        return whatToCarry.equals("") || good.whatToCarry.equals(whatToCarry);
+//    }
 
 
     public GoodsAdapter(Firebase goodsRef, final Context context, final int filter, final String userName) {
@@ -59,7 +59,7 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodViewHolder> {
                         goods.add(good);
                         break;
                     case 2:
-                        boolean show = filterArv(good) && filterDep(good) && filterContent(good)&&filterDate(good);
+                        boolean show = filterArv(good) && filterDep(good) &&filterDate(good);//&& filterContent(good);
                         if (show) {
                             goods.add(good);
                         }
@@ -111,9 +111,6 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodViewHolder> {
     public void onBindViewHolder(GoodViewHolder holder, int position) {
         Good good = goods.get(position);
         holder.bind(good);
-//        holder.personName.setText(good.name);
-//        holder.personInfo.setText(good.info);
-//        holder.personPhoto.setImageResource(good.photoId);
     }
 
     @Override

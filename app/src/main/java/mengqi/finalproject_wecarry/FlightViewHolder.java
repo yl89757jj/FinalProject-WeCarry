@@ -1,6 +1,7 @@
 package mengqi.finalproject_wecarry;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -39,16 +40,19 @@ public class FlightViewHolder extends RecyclerView.ViewHolder {
 
 
     public void bind(final Flight flight) {
-        flightNum.setText(flight.number);
+//        flightNum.setText(flight.number);
         flightDep.setText(flight.departure);
         flightSpace.setText(flight.spaceAvailable);
         flightTime.setText(flight.departDate);
         flightArrival.setText(flight.arrival);
-        flightNote.setText(flight.specialNote);
+//        flightNote.setText(flight.specialNote);
         flightCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, flightNum.getText(), Toast.LENGTH_SHORT).show();
+                Intent intent= new Intent(v.getContext(),FlightActivity.class);
+                v.getContext().startActivity(intent);
+
             }
         });
     }

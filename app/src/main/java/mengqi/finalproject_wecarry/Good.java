@@ -10,19 +10,21 @@ public class Good {
     public String flexibility;
     public String whatToCarry;
     public String userName;
+    public String userEmail;
 
 
     public Good() {
-        this("", "", "", "", "", "");
+        this("", "", "", "", "", "","");
     }
 
-    public Good(String departureArea, String arrivalArea, String datePreferred, String flexibility, String whatToCarry, String userName) {
+    public Good(String departureArea, String arrivalArea, String datePreferred, String flexibility, String whatToCarry, String userName, String userEmail) {
         this.departureArea = departureArea;
         this.arrivalArea = arrivalArea;
         this.datePreferred = datePreferred;
         this.flexibility = flexibility;
         this.whatToCarry = whatToCarry;
         this.userName = userName;
+        this.userEmail=userEmail;
     }
 
     @Override
@@ -32,6 +34,6 @@ public class Good {
         }
 
         Good good = (Good) object;
-        return whatToCarry == good.whatToCarry;//there should be a particular var for each good
+        return whatToCarry == good.whatToCarry;
     }
 }

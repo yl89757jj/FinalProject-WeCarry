@@ -6,7 +6,6 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  * Created by Lu on 2/23/2016.
@@ -43,6 +42,7 @@ public class FlightViewHolder extends RecyclerView.ViewHolder {
         flightCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent= new Intent(v.getContext(),FlightActivity.class);
                 intent.putExtra("EDE",flight.departure);
                 intent.putExtra("EAR",flight.arrival);
@@ -51,6 +51,8 @@ public class FlightViewHolder extends RecyclerView.ViewHolder {
                 intent.putExtra("ENO",flight.specialNote);
                 intent.putExtra("ENU",flight.number);
                 intent.putExtra("EEM",flight.userEmail);
+
+
                 v.getContext().startActivity(intent);
 
             }

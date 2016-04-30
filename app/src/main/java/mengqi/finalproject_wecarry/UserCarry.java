@@ -203,6 +203,9 @@ public class UserCarry extends AppCompatActivity {
             case R.id.user:
                 Intent intent = new Intent(UserCarry.this, UserActivity.class);
                 startActivity(intent);
+            case R.id.home:
+                Intent intent2 = new Intent(UserCarry.this, HomeActivity.class);
+                startActivity(intent2);
             default:
                 return super.onOptionsItemSelected(item);
         }

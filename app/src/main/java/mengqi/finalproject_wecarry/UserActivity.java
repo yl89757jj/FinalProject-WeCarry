@@ -92,6 +92,9 @@ public class UserActivity extends AppCompatActivity {
             case R.id.user:
                 Intent intent = new Intent(UserActivity.this, UserActivity.class);
                 startActivity(intent);
+            case R.id.home:
+                Intent intent2 = new Intent(UserActivity.this, HomeActivity.class);
+                startActivity(intent2);
             default:
                 return super.onOptionsItemSelected(item);
         }

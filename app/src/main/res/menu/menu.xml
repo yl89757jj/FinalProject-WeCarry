@@ -11,4 +11,9 @@
         android:title="My Account"
         app:showAsAction="never"
     />
+    <item
+        android:id="@+id/home"
+        android:icon="@android:drawable/ic_menu_directions"
+        android:title="Home"
+        app:showAsAction="always" />
 </menu>

@@ -40,6 +40,7 @@ public class UserCarry extends AppCompatActivity {
     private EditText whatToCarry;
     private Firebase userRef;
     private String userName;
+    private String userEmail;
     private Button button;
     private int year, month, day;
     private static final int DILOG_ID = 0;
@@ -65,6 +66,8 @@ public class UserCarry extends AppCompatActivity {
                 } else {
                     userRef = MainActivity.rootRef;
                     userName = authData.getUid().toString();
+                    userEmail=authData.getProviderData().get("email").toString();
+
                 }
             }
         };
@@ -101,7 +104,7 @@ public class UserCarry extends AppCompatActivity {
         String byteString = bitmapToByteString(((BitmapDrawable) PhotoImageView.getDrawable()).getBitmap());
         whatToCarry = (EditText) findViewById(R.id.what_to_carry);
         Good goods = new Good(departureArea.getSelectedItem().toString(), arrivalArea.getSelectedItem().toString(), datePreferred, flexibility.getSelectedItem().toString(),
-                whatToCarry.getText().toString(), userName, byteString);
+                whatToCarry.getText().toString(), userEmail,byteString);
         userRef.child("goods").push().setValue(goods);
         Intent intent = new Intent(UserCarry.this, HomeActivity.class);
         startActivity(intent);

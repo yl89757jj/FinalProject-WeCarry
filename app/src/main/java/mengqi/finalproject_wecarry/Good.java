@@ -9,21 +9,21 @@ public class Good {
     public String datePreferred;
     public String flexibility;
     public String whatToCarry;
-    public String userName;
     public String userEmail;
+    public String photo;
 
 
     public Good() {
-        this("", "", "", "", "", "","");
+        this("", "", "", "", "","","");
     }
 
-    public Good(String departureArea, String arrivalArea, String datePreferred, String flexibility, String whatToCarry, String userName, String userEmail) {
+    public Good(String departureArea, String arrivalArea, String datePreferred, String flexibility, String whatToCarry, String userEmail,String photo) {
         this.departureArea = departureArea;
         this.arrivalArea = arrivalArea;
         this.datePreferred = datePreferred;
         this.flexibility = flexibility;
         this.whatToCarry = whatToCarry;
-        this.userName = userName;
+        this.photo=photo;
         this.userEmail=userEmail;
     }
 

@@ -46,7 +46,7 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodViewHolder> {
 //    }
 
 
-    public GoodsAdapter(Firebase goodsRef, final Context context, final int filter, final String userName) {
+    public GoodsAdapter(Firebase goodsRef, final Context context, final int filter, final String userEmail) {
         goods=new ArrayList<>();
         this.context = context;
 
@@ -65,7 +65,7 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodViewHolder> {
                         }
                         break;
                     case 3:
-                        if(good.userName.equals(userName)){
+                        if(good.userEmail.equals(userEmail)){
                             goods.add(good);
                         }
                         break;

@@ -46,7 +46,7 @@ public class  FlightsAdapter extends RecyclerView.Adapter<FlightViewHolder> {
 //    }
 
 
-    public FlightsAdapter(Firebase flightsRef, Context context, final int filter, final String userName) {
+    public FlightsAdapter(Firebase flightsRef, Context context, final int filter, final String userEmail) {
         this.context = context;
         flights = new ArrayList<>();
 
@@ -65,7 +65,7 @@ public class  FlightsAdapter extends RecyclerView.Adapter<FlightViewHolder> {
                         }
                         break;
                     case 3:
-                        if(flight.userName.equals(userName)){
+                        if(flight.userEmail.equals(userEmail)){
                             flights.add(flight);
                         }
                         break;

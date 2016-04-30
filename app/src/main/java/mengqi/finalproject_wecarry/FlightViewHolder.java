@@ -33,19 +33,15 @@ public class FlightViewHolder extends RecyclerView.ViewHolder {
         flightTime = (TextView) itemView.findViewById(R.id.flight_time);
         flightArrival = (TextView) itemView.findViewById(R.id.flight_arrival);
         flightNote = (TextView) itemView.findViewById(R.id.flight_note);
-
-        // personPhoto = (ImageView) itemView.findViewById(R.id.person_photo);
         this.context = context;
     }
 
 
     public void bind(final Flight flight) {
-//        flightNum.setText(flight.number);
         flightDep.setText(flight.departure);
         flightSpace.setText(flight.spaceAvailable);
         flightTime.setText(flight.departDate);
         flightArrival.setText(flight.arrival);
-//        flightNote.setText(flight.specialNote);
         flightCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

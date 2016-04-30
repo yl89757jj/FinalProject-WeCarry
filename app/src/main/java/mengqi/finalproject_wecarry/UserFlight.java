@@ -27,7 +27,6 @@ public class UserFlight extends AppCompatActivity {
     private EditText spaceAvaible;
     private EditText specialNote;
     private Firebase userRef;
-    private String userName;
     private String userEmail;
     private Button button;
     private int year, month, day;
@@ -52,7 +51,7 @@ public class UserFlight extends AppCompatActivity {
                     startActivity(intent);
                 } else {
                     userRef = MainActivity.rootRef;
-                    userName = authData.getUid();
+                    userEmail=authData.getProviderData().get("email").toString();
 
                 }
             }
@@ -89,7 +88,7 @@ public class UserFlight extends AppCompatActivity {
         spaceAvaible = (EditText) findViewById(R.id.space_available);
         specialNote = (EditText) findViewById(R.id.special_note);
         Flight flight = new Flight(departure.getSelectedItem().toString(), arrival.getSelectedItem().toString(), flightNo.getText().toString(), departDate,
-                spaceAvaible.getText().toString(), specialNote.getText().toString(), userName,userEmail);
+                spaceAvaible.getText().toString(), specialNote.getText().toString(), userEmail);
         userRef.child("flights").push().setValue(flight);
         Intent intent = new Intent(UserFlight.this, HomeActivity.class);
         startActivity(intent);

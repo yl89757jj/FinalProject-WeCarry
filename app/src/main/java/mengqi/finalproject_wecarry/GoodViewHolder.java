@@ -35,7 +35,6 @@ public class GoodViewHolder extends RecyclerView.ViewHolder {
     public void bind(final Good good) {
         goodsTime.setText(good.datePreferred);
         goodsContent.setText(good.whatToCarry);
-//        goodsFlex.setText(good.flexibility);
         goodsArrival.setText(good.arrivalArea);
         goodsDeparture.setText(good.departureArea);
 
@@ -44,7 +43,6 @@ public class GoodViewHolder extends RecyclerView.ViewHolder {
             public void onClick(View v) {
                 Toast.makeText(context, goodsContent.getText(), Toast.LENGTH_SHORT).show();
                 Intent intent= new Intent(v.getContext(),GoodsActivity.class);
-                //intent.putExtra("Good", good);
                 v.getContext().startActivity(intent);
 
             }

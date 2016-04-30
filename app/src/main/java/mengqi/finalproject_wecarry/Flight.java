@@ -9,8 +9,6 @@ public class Flight {
     public String number;
     public String departDate;
     public String spaceAvailable;
-
-
     public String specialNote;
     public String userName;
     public String userEmail;
@@ -18,18 +16,18 @@ public class Flight {
 
 
     public Flight() {
-        this("", "", "", "", "", "", "","");
+        this("", "", "", "", "", "","");
     }
 
     public Flight(String departure, String arrival, String number, String departDate,
-                  String spaceAvailable, String specialNote, String userName,String userEmail) {
+                  String spaceAvailable, String specialNote, String userEmail) {
         this.departure = departure;
         this.arrival = arrival;
         this.number = number;
         this.departDate = departDate;
         this.spaceAvailable = spaceAvailable;
         this.specialNote = specialNote;
-        this.userName = userName;
+
         this.userEmail=userEmail;
 
     }

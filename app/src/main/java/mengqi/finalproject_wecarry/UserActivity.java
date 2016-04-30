@@ -19,8 +19,8 @@ public class UserActivity extends AppCompatActivity {
     private FlightsAdapter flightsAdapter;
     private GoodsAdapter goodsAdapter;
     private RecyclerView goodsRecyclerView;
-    public String email;
-    private String userName;
+    private String email;
+
 
 
 
@@ -39,11 +39,11 @@ public class UserActivity extends AppCompatActivity {
                     startActivity(intent);
                 } else {
                     userRef = MainActivity.rootRef;
-                    userName = authData.getUid().toString();
-                    flightsAdapter = new FlightsAdapter(MainActivity.rootRef.child("flights"), UserActivity.this, 3, userName);
+                    email = authData.getProviderData().get("email").toString();
+                    flightsAdapter = new FlightsAdapter(MainActivity.rootRef.child("flights"), UserActivity.this, 3,email );
                     flightRecyclerView.setAdapter(flightsAdapter);
 
-                    goodsAdapter = new GoodsAdapter(MainActivity.rootRef.child("goods"), UserActivity.this, 3, userName);
+                    goodsAdapter = new GoodsAdapter(MainActivity.rootRef.child("goods"), UserActivity.this, 3, email);
                     goodsRecyclerView.setAdapter(goodsAdapter);
 
                     flightRecyclerView.setHasFixedSize(true);

@@ -19,6 +19,8 @@ public class GoodsActivity extends AppCompatActivity {
     }
 
 
+
+
     private void SendEmail() {
         String[] TO = {toEmail};
         Intent emailIntent = new Intent(Intent.ACTION_SEND);

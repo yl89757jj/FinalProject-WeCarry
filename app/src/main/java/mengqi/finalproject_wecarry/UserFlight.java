@@ -53,6 +53,7 @@ public class UserFlight extends AppCompatActivity {
                 } else {
                     userRef = MainActivity.rootRef;
                     userName = authData.getUid();
+
                 }
             }
         };

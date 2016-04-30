@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +19,7 @@ public class GoodViewHolder extends RecyclerView.ViewHolder {
     public TextView goodsFlex;
     public TextView goodsContent;
     public TextView goodsTime;
+    public ImageView imageView;
     private Context context;
 
 
@@ -29,6 +31,7 @@ public class GoodViewHolder extends RecyclerView.ViewHolder {
         goodsFlex = (TextView) itemView.findViewById(R.id.goods_flexibility);
         goodsContent = (TextView) itemView.findViewById(R.id.goods_content);
         goodsTime = (TextView) itemView.findViewById(R.id.goods_time);
+        imageView = (ImageView) itemView.findViewById(R.id.photo);
         this.context = context;
     }
 

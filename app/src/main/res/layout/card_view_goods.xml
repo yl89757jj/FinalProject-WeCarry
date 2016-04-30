@@ -129,8 +129,8 @@
 
             <ImageView
                 android:id="@+id/photo"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp" />
+                android:layout_width="150dp"
+                android:layout_height="150dp" />
         </LinearLayout>
 
 

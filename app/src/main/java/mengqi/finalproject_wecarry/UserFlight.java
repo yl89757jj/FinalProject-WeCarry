@@ -51,7 +51,9 @@ public class UserFlight extends AppCompatActivity {
                     startActivity(intent);
                 } else {
                     userRef = MainActivity.rootRef;
+
                     userEmail=authData.getProviderData().get("email").toString();
+
 
                 }
             }

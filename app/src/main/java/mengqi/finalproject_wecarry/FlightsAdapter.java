@@ -41,10 +41,6 @@ public class  FlightsAdapter extends RecyclerView.Adapter<FlightViewHolder> {
         return arrival.equals("") || flight.arrival.equals(arrival);
     }
 
-//    private boolean filterSpc(Flight flight){
-//        return spaceAvailable.equals("") || flight.spaceAvailable.equals(spaceAvailable);
-//    }
-
 
     public FlightsAdapter(Firebase flightsRef, Context context, final int filter, final String userEmail) {
         this.context = context;

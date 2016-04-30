@@ -10,7 +10,6 @@ public class Flight {
     public String departDate;
     public String spaceAvailable;
     public String specialNote;
-    public String userName;
     public String userEmail;
 
 
@@ -27,7 +26,6 @@ public class Flight {
         this.departDate = departDate;
         this.spaceAvailable = spaceAvailable;
         this.specialNote = specialNote;
-
         this.userEmail=userEmail;
 
     }

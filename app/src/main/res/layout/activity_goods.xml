@@ -104,14 +104,16 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:text="What to carry:"
             style="@style/normalText2" />
 
         <TextView
             android:id="@+id/select_what_to_carry"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:gravity="top"
             style="@style/normalText"
             />
@@ -128,12 +130,14 @@
             android:layout_height="wrap_content"
             android:text="Photo"
             style="@style/normalText2" />
-
         <ImageView
             android:id="@+id/select_photo"
-            android:layout_width="400dp"
-            android:layout_height="300dp" />
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
     </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"

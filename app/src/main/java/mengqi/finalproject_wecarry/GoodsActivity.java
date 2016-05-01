@@ -1,9 +1,12 @@
 package mengqi.finalproject_wecarry;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Base64;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -22,15 +25,14 @@ public class GoodsActivity extends AppCompatActivity {
     private Intent intent;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_goods);
-        intent=getIntent();
+        intent = getIntent();
         Bundle extras = intent.getExtras();
 
-        edit_message=(EditText)findViewById(R.id.message1) ;
+        edit_message = (EditText) findViewById(R.id.message1);
         departureArea = (TextView) findViewById(R.id.select_departure);
         arrivalArea = (TextView) findViewById(R.id.select_arrival);
         datePreferred = (TextView) findViewById(R.id.select_date);
@@ -38,7 +40,7 @@ public class GoodsActivity extends AppCompatActivity {
         whatToCarry = (TextView) findViewById(R.id.select_what_to_carry);
         photo = (ImageView) findViewById(R.id.select_photo);
 
-        toEmail=extras.getString("EXEM");
+        toEmail = extras.getString("EXEM");
 
 
         departureArea.setText(extras.getString("EXDE"));
@@ -46,8 +48,15 @@ public class GoodsActivity extends AppCompatActivity {
         datePreferred.setText(extras.getString("EXDA"));
         flexibility.setText(extras.getString("EXFL"));
         whatToCarry.setText(extras.getString("EXWH"));
+        photo.setImageBitmap(byteStringToBitmap("EXPO"));
 
 
+
+    }
+
+    private Bitmap byteStringToBitmap(String byteString) {
+        byte[] imageAsByte = Base64.decode(byteString.getBytes(), Base64.DEFAULT);
+        return BitmapFactory.decodeByteArray(imageAsByte, 0, imageAsByte.length);
     }
 
 
@@ -60,18 +69,6 @@ public class GoodsActivity extends AppCompatActivity {
         intent.putExtra(Intent.EXTRA_TEXT, message);
         startActivity(intent);
 
-//        Intent emailIntent = new Intent(Intent.ACTION_SEND);
-//        emailIntent.setData(Uri.parse("mailto:"+toEmail));
-//        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Message From WeCarry");
-//        emailIntent.putExtra(Intent.EXTRA_TEXT, message);
-
-//        try {
-//            startActivity(Intent.createChooser(emailIntent, "Send mail..."));
-//            finish();
-//        } catch (android.content.ActivityNotFoundException ex) {
-//            Toast.makeText(GoodsActivity.this,
-//                    "There is no email client installed.", Toast.LENGTH_SHORT).show();
-//        }
     }
 
 }

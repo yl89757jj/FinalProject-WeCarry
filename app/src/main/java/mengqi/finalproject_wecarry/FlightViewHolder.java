@@ -44,6 +44,7 @@ public class FlightViewHolder extends RecyclerView.ViewHolder {
             public void onClick(View v) {
 
                 Intent intent= new Intent(v.getContext(),FlightActivity.class);
+//                intent.putExtra("FLIGHT",flight);
                 intent.putExtra("EDE",flight.departure);
                 intent.putExtra("EAR",flight.arrival);
                 intent.putExtra("EDA",flight.departDate);

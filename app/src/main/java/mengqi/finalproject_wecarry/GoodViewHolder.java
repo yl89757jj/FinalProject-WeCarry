@@ -42,8 +42,7 @@ public class GoodViewHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), GoodsActivity.class);
-
-
+//                intent.putExtra("GOOD",good);
                 intent.putExtra("EXDE",good.departureArea);
                 intent.putExtra("EXAR",good.arrivalArea);
                 intent.putExtra("EXDA",good.datePreferred);

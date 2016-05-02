@@ -31,6 +31,7 @@ public class GoodsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_goods);
         intent = getIntent();
         Bundle extras = intent.getExtras();
+//        Good selectedGood= (Good) intent.getParcelableExtra("GOOD");
 
         edit_message = (EditText) findViewById(R.id.message1);
         departureArea = (TextView) findViewById(R.id.select_departure);
@@ -41,16 +42,20 @@ public class GoodsActivity extends AppCompatActivity {
         photo = (ImageView) findViewById(R.id.select_photo);
 
         toEmail = extras.getString("EXEM");
-
-
         departureArea.setText(extras.getString("EXDE"));
         arrivalArea.setText(extras.getString("EXAR"));
         datePreferred.setText(extras.getString("EXDA"));
         flexibility.setText(extras.getString("EXFL"));
         whatToCarry.setText(extras.getString("EXWH"));
-        photo.setImageBitmap(byteStringToBitmap("EXPO"));
+        photo.setImageBitmap(byteStringToBitmap(extras.getString("EXPO")));
 
-
+//        departureArea.setText(selectedGood.departureArea);
+//        arrivalArea.setText(selectedGood.arrivalArea);
+//        datePreferred.setText(selectedGood.datePreferred);
+//        flexibility.setText(selectedGood.flexibility);
+//        whatToCarry.setText(selectedGood.whatToCarry);
+//        photo.setImageBitmap(byteStringToBitmap(selectedGood.photo));
+//        toEmail=selectedGood.userEmail;
 
     }
 

@@ -4,9 +4,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class FlightActivity extends AppCompatActivity {
     private TextView departureDate;
@@ -15,9 +15,8 @@ public class FlightActivity extends AppCompatActivity {
     private TextView flightNo;
     private TextView spaceAvaible;
     private TextView specialNote;
-    private EditText messageText;
+    private EditText edit_message;
     private String toEmail;
-
     private Intent intent;
 
     @Override
@@ -32,8 +31,7 @@ public class FlightActivity extends AppCompatActivity {
         flightNo = (TextView) findViewById(R.id.select_fight_no);
         spaceAvaible = (TextView) findViewById(R.id.select_space_available);
         specialNote = (TextView) findViewById(R.id.select_special_note);
-        messageText = (EditText) findViewById(R.id.message);
-
+        edit_message = (EditText) findViewById(R.id.message);
 
         toEmail = extras.getString("EEM");
         departure.setText(extras.getString("EDE"));
@@ -45,8 +43,8 @@ public class FlightActivity extends AppCompatActivity {
 
     }
 
-    public void sendEmail1(View view) {
-        String message = messageText.getText().toString();
+    public void sendEmail1() {
+        String message = edit_message.getText().toString();
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:"));
         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{toEmail});
@@ -55,20 +53,5 @@ public class FlightActivity extends AppCompatActivity {
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
-
-//        Intent emailIntent = new Intent(Intent.ACT
-// ION_SEND);
-//        emailIntent.setData(Uri.parse("mailto:"));
-//        emailIntent.putExtra(Intent.EXTRA_EMAIL, toEmail);
-//        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Message From WeCarry");
-//        emailIntent.putExtra(Intent.EXTRA_TEXT, message);
-//
-//        try {
-//            startActivity(Intent.createChooser(emailIntent, "Send mail..."));
-//            finish();
-//        } catch (android.content.ActivityNotFoundException ex) {
-//            Toast.makeText(FlightActivity.this,
-//                    "There is no email client installed.", Toast.LENGTH_SHORT).show();
-//        }
     }
 }

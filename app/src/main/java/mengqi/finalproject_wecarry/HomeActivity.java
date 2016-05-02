@@ -85,7 +85,7 @@ public class HomeActivity extends AppCompatActivity {
         @Override
         public void onDateSet(DatePicker view, int years, int monthOfYear, int dayOfMonth) {
             year = years;
-            month = monthOfYear + 1;
+            month = monthOfYear - 1;
             day = dayOfMonth;
             button.setText(month + "/" + day + "/" + year);
         }
@@ -108,10 +108,7 @@ public class HomeActivity extends AppCompatActivity {
         }else
             GoodsAdapter.arrivalArea = arrival.getSelectedItem().toString();
 
-            departDate = month + "/" + day + "/" + year;
-         if (departDate.equals("0/0/0")){
-            GoodsAdapter.datePreferred = "";
-        }else
+            departDate = button.getText().toString();
             GoodsAdapter.datePreferred = departDate;
 
     }
@@ -130,11 +127,8 @@ public class HomeActivity extends AppCompatActivity {
         }else
             FlightsAdapter.arrival = arrival.getSelectedItem().toString();
 
-        departDate = month + "/" + day + "/" + year;
-        if(departDate.equals("0/0/0")){
-            FlightsAdapter.departDate ="";
-        }else
-            FlightsAdapter.departDate = departDate;
+        departDate = button.getText().toString();
+        FlightsAdapter.departDate = departDate;
     }
 
     @Override

@@ -56,12 +56,11 @@ public class GoodsActivity extends AppCompatActivity {
 //        whatToCarry.setText(selectedGood.whatToCarry);
 //        photo.setImageBitmap(byteStringToBitmap(selectedGood.photo));
 //        toEmail=selectedGood.userEmail;
-
     }
 
     private Bitmap byteStringToBitmap(String byteString) {
-        byte[] imageAsByte = Base64.decode(byteString.getBytes(), Base64.DEFAULT);
-        return BitmapFactory.decodeByteArray(imageAsByte, 0, imageAsByte.length);
+            byte[] imageAsByte = Base64.decode(byteString.getBytes(), Base64.DEFAULT);
+            return BitmapFactory.decodeByteArray(imageAsByte, 0, imageAsByte.length);
     }
 
 

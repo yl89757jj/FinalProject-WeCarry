@@ -99,7 +99,10 @@ public class UserCarry extends AppCompatActivity {
         arrivalArea = (Spinner) findViewById(R.id.arrival_area);
         datePreferred = month + "/" + day + "/" + year;
         flexibility = (Spinner) findViewById(R.id.flexibility);
-        String byteString = bitmapToByteString(((BitmapDrawable) PhotoImageView.getDrawable()).getBitmap());
+        String byteString;
+
+        byteString = bitmapToByteString(((BitmapDrawable) PhotoImageView.getDrawable()).getBitmap());
+
         whatToCarry = (EditText) findViewById(R.id.what_to_carry);
         Good goods = new Good(departureArea.getSelectedItem().toString(), arrivalArea.getSelectedItem().toString(), datePreferred, flexibility.getSelectedItem().toString(),
                 whatToCarry.getText().toString(), userEmail,byteString);

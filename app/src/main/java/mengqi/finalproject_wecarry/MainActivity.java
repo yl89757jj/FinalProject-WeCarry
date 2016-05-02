@@ -14,7 +14,7 @@ import com.firebase.client.Firebase;
 public class MainActivity extends AppCompatActivity {
     public static Firebase rootRef;
     private Firebase.AuthStateListener authStateListener;
-    public String userName;
+
 
 
     @Override

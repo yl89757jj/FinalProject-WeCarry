@@ -39,7 +39,7 @@ public class HomeActivity extends AppCompatActivity {
         Firebase.setAndroidContext(this);
         final Calendar calendar = Calendar.getInstance();
         year = calendar.get(Calendar.YEAR);
-        month = calendar.get(Calendar.MONTH);
+        month =calendar.get(Calendar.MONTH);
         day = calendar.get(Calendar.DAY_OF_MONTH);
 
 
@@ -109,7 +109,7 @@ public class HomeActivity extends AppCompatActivity {
             GoodsAdapter.arrivalArea = arrival.getSelectedItem().toString();
 
             departDate = month + "/" + day + "/" + year;
-        if (departDate.equals(null)){
+         if (departDate.equals("0/0/0")){
             GoodsAdapter.datePreferred = "";
         }else
             GoodsAdapter.datePreferred = departDate;

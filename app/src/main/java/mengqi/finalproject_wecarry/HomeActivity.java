@@ -81,6 +81,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private DatePickerDialog.OnDateSetListener dpickListener = new DatePickerDialog.OnDateSetListener() {
+
         @Override
         public void onDateSet(DatePicker view, int years, int monthOfYear, int dayOfMonth) {
             year = years;
@@ -91,14 +92,27 @@ public class HomeActivity extends AppCompatActivity {
     };
 
 
+
     public void SearchGoods(View view) {
         fly = true;
         Intent intent = new Intent(HomeActivity.this, SearchResult.class);
         startActivity(intent);
-        GoodsAdapter.departureArea = departure.getSelectedItem().toString();
-        GoodsAdapter.arrivalArea = arrival.getSelectedItem().toString();
-        departDate = month + "/" + day + "/" + year;
-        GoodsAdapter.datePreferred = departDate;
+
+        if(departure.getSelectedItem().toString().equals(null)){
+            GoodsAdapter.departureArea ="";
+        }else
+            GoodsAdapter.departureArea = departure.getSelectedItem().toString();
+
+        if(arrival.getSelectedItem().toString().equals(null)){
+            GoodsAdapter.arrivalArea="";
+        }else
+            GoodsAdapter.arrivalArea = arrival.getSelectedItem().toString();
+
+            departDate = month + "/" + day + "/" + year;
+        if (departDate.equals(null)){
+            GoodsAdapter.datePreferred = "";
+        }else
+            GoodsAdapter.datePreferred = departDate;
 
     }
 
@@ -106,10 +120,21 @@ public class HomeActivity extends AppCompatActivity {
         fly = false;
         Intent intent = new Intent(HomeActivity.this, SearchResult.class);
         startActivity(intent);
-        FlightsAdapter.departure = departure.getSelectedItem().toString();
-        FlightsAdapter.arrival = arrival.getSelectedItem().toString();
+        if(departure.getSelectedItem().toString().equals(null)){
+            FlightsAdapter.departure="";
+        }else
+            FlightsAdapter.departure = departure.getSelectedItem().toString();
+
+        if(arrival.getSelectedItem().toString().equals(null)){
+            FlightsAdapter.arrival="";
+        }else
+            FlightsAdapter.arrival = arrival.getSelectedItem().toString();
+
         departDate = month + "/" + day + "/" + year;
-        FlightsAdapter.departDate = departDate;
+        if(departDate.equals("0/0/0")){
+            FlightsAdapter.departDate ="";
+        }else
+            FlightsAdapter.departDate = departDate;
     }
 
     @Override

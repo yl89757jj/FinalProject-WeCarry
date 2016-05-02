@@ -106,6 +106,16 @@
             android:layout_weight="2"
             android:layout_height="wrap_content"
             android:onClick="datePick" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="No Preffered Date"/>
+        <CheckBox
+            android:id="@+id/timePrefer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"/>
     </LinearLayout>
 
     <LinearLayout

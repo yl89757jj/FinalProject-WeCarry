@@ -4,9 +4,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class FlightActivity extends AppCompatActivity {
     private TextView departureDate;
@@ -16,6 +16,7 @@ public class FlightActivity extends AppCompatActivity {
     private TextView spaceAvaible;
     private TextView specialNote;
     private EditText edit_message;
+    private String message;
     private String toEmail;
     private Intent intent;
 
@@ -43,15 +44,13 @@ public class FlightActivity extends AppCompatActivity {
 
     }
 
-    public void sendEmail1() {
-        String message = edit_message.getText().toString();
+    public void sendEmail1(View view) {
+        message = edit_message.getText().toString();
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:"));
         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{toEmail});
         intent.putExtra(Intent.EXTRA_SUBJECT, "Message From WeCarry");
         intent.putExtra(Intent.EXTRA_TEXT, message);
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
-        }
+        startActivity(intent);
     }
 }

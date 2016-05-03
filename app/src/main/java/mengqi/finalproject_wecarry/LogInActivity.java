@@ -58,21 +58,26 @@ public class LogInActivity extends AppCompatActivity {
         String email = emailEditText.getText().toString();
         String password = passwordEditText.getText().toString();
 
-        if (email.substring(email.length() - 4, email.length()).equals(".edu")) {
-        firebase.createUser(email, password, new Firebase.ValueResultHandler<Map<String, Object>>() {
-            @Override
-            public void onSuccess(Map<String, Object> result) {
-                Toast.makeText(LogInActivity.this, "Successfully created user account with uid: " + result.get("uid"), Toast.LENGTH_LONG).show();
-            }
+        if (email.equals("")) {
+            Toast.makeText(LogInActivity.this, "Please enter your email", Toast.LENGTH_LONG).show();
+        } else if (email.substring(email.length() - 4, email.length()).equals(".edu")) {
+            firebase.createUser(email, password, new Firebase.ValueResultHandler<Map<String, Object>>() {
+                @Override
+                public void onSuccess(Map<String, Object> result) {
+                    Toast.makeText(LogInActivity.this, "Successfully created user account with uid: " + result.get("uid"), Toast.LENGTH_LONG).show();
+                }
 
-            @Override
-            public void onError(FirebaseError firebaseError) {
-                Toast.makeText(LogInActivity.this, "Unable to Sign Up: " + firebaseError.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
+                @Override
+                public void onError(FirebaseError firebaseError) {
+                    Toast.makeText(LogInActivity.this, "Unable to Sign Up: " + firebaseError.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+        } else if (password.equals("")) {
+            Toast.makeText(LogInActivity.this, "Please enter your password", Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(LogInActivity.this, "Please Sign up with a \".edu\" email", Toast.LENGTH_LONG).show();
         }
+
     }
 
     @Override

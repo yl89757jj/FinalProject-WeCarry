@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -52,5 +54,27 @@ public class FlightActivity extends AppCompatActivity {
         intent.putExtra(Intent.EXTRA_SUBJECT, "Message From WeCarry");
         intent.putExtra(Intent.EXTRA_TEXT, message);
         startActivity(intent);
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.log_out:
+                MainActivity.rootRef.unauth();
+                return true;
+            case R.id.user:
+                Intent intent = new Intent(FlightActivity.this, UserActivity.class);
+                startActivity(intent);
+            case R.id.home:
+                Intent intent2 = new Intent(FlightActivity.this, HomeActivity.class);
+                startActivity(intent2);
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

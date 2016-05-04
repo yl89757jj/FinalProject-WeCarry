@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
@@ -23,8 +24,8 @@ public class UserFlight extends AppCompatActivity {
     private Spinner departure;
     private Spinner arrival;
     private EditText flightNo;
-    private String departDate;
-    private EditText spaceAvaible;
+    private String departDate="";
+    private EditText spaceAvailable;
     private EditText specialNote;
     private Firebase userRef;
     private String userEmail;
@@ -87,13 +88,17 @@ public class UserFlight extends AppCompatActivity {
         arrival = (Spinner) findViewById(R.id.arrival_city);
         flightNo = (EditText) findViewById(R.id.fight_no);
         departDate = month + "/" + day + "/" + year;
-        spaceAvaible = (EditText) findViewById(R.id.space_available);
+        spaceAvailable = (EditText) findViewById(R.id.space_available);
         specialNote = (EditText) findViewById(R.id.special_note);
-        Flight flight = new Flight(departure.getSelectedItem().toString(), arrival.getSelectedItem().toString(), flightNo.getText().toString(), departDate,
-                spaceAvaible.getText().toString(), specialNote.getText().toString(), userEmail);
+
+        if(departure.equals("")||arrival.equals("")||departDate.equals("")|| spaceAvailable.equals("")){
+            Toast.makeText(UserFlight.this, "Please enter your required information.", Toast.LENGTH_LONG).show();
+        }else
+        {Flight flight = new Flight(departure.getSelectedItem().toString(), arrival.getSelectedItem().toString(), flightNo.getText().toString(), departDate,
+                spaceAvailable.getText().toString(), specialNote.getText().toString(), userEmail);
         userRef.child("flights").push().setValue(flight);
         Intent intent = new Intent(UserFlight.this, HomeActivity.class);
-        startActivity(intent);
+        startActivity(intent);}
     }
 
     @Override

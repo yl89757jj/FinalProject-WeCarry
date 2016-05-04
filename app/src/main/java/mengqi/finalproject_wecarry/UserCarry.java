@@ -20,6 +20,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
@@ -99,16 +100,17 @@ public class UserCarry extends AppCompatActivity {
         arrivalArea = (Spinner) findViewById(R.id.arrival_area);
         datePreferred = month + "/" + day + "/" + year;
         flexibility = (Spinner) findViewById(R.id.flexibility);
-        String byteString;
-
-        byteString = bitmapToByteString(((BitmapDrawable) PhotoImageView.getDrawable()).getBitmap());
-
+        String byteString = bitmapToByteString(((BitmapDrawable) PhotoImageView.getDrawable()).getBitmap());
         whatToCarry = (EditText) findViewById(R.id.what_to_carry);
-        Good goods = new Good(departureArea.getSelectedItem().toString(), arrivalArea.getSelectedItem().toString(), datePreferred, flexibility.getSelectedItem().toString(),
+
+        if(departureArea.equals("")||arrivalArea.equals("")||datePreferred.equals("")||whatToCarry.equals("")){
+            Toast.makeText(UserCarry.this, "Please enter your required information.", Toast.LENGTH_LONG).show();
+        }else
+        {Good goods = new Good(departureArea.getSelectedItem().toString(), arrivalArea.getSelectedItem().toString(), datePreferred, flexibility.getSelectedItem().toString(),
                 whatToCarry.getText().toString(), userEmail,byteString);
         userRef.child("goods").push().setValue(goods);
         Intent intent = new Intent(UserCarry.this, HomeActivity.class);
-        startActivity(intent);
+        startActivity(intent);}
     }
 
     public void takeImage(View view) {

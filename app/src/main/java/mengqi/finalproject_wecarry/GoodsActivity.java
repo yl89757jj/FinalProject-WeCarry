@@ -7,6 +7,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -73,6 +75,28 @@ public class GoodsActivity extends AppCompatActivity {
         intent.putExtra(Intent.EXTRA_TEXT, message);
         startActivity(intent);
 
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.log_out:
+                MainActivity.rootRef.unauth();
+                return true;
+            case R.id.user:
+                Intent intent = new Intent(GoodsActivity.this, UserActivity.class);
+                startActivity(intent);
+            case R.id.home:
+                Intent intent2 = new Intent(GoodsActivity.this, HomeActivity.class);
+                startActivity(intent2);
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 }

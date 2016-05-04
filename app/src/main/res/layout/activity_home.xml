@@ -24,7 +24,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Flying"
+            android:text="Available Delivery "
             style="@style/title" />
 
 
@@ -42,7 +42,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Carry Needed"
+            android:text="Goods Waiting to be Carried"
             style="@style/title" />
 
         <android.support.v7.widget.RecyclerView
@@ -108,15 +108,7 @@
             android:text=""
             android:onClick="datePick" />
 
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:text="No Preffered Date"/>-->
-        <!--<CheckBox-->
-            <!--android:id="@+id/timePrefer"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:checked="true"/>-->
+
     </LinearLayout>
 
     <LinearLayout
@@ -141,7 +133,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="SearchFlight"
-            android:text="Search Flight" />
+            android:text="Search Delivery" />
 
     </LinearLayout>
 

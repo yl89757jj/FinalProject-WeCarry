@@ -34,11 +34,11 @@ public class UserCarry extends AppCompatActivity {
     private Firebase.AuthStateListener authStateListener;
     private static final int REQUEST_TAKE_PHOTO = 1;
     private static final int REQUEST_PICK_PHOTO = 2;
-    private Spinner departureArea;
-    private Spinner arrivalArea;
+    private Spinner departureAreaSpinner;
+    private Spinner arrivalAreaSpinner;
     private String datePreferred;
     private Spinner flexibility;
-    private EditText whatToCarry;
+    private EditText whatToCarryEditText;
     private Firebase userRef;
     private String userEmail;
     private Button button;
@@ -53,6 +53,7 @@ public class UserCarry extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_carry);
         final Calendar calendar = Calendar.getInstance();
+        button = (Button) findViewById(R.id.date_preferred);
         year = calendar.get(Calendar.YEAR);
         month = calendar.get(Calendar.MONTH);
         day = calendar.get(Calendar.DAY_OF_MONTH);
@@ -81,11 +82,11 @@ public class UserCarry extends AppCompatActivity {
     @Override
     protected Dialog onCreateDialog(int id) {
         if (id == DILOG_ID)
-            return new DatePickerDialog(this, dpickListener, year, month, day);
+            return new DatePickerDialog(this, datePickListener, year, month, day);
         return null;
     }
 
-    private DatePickerDialog.OnDateSetListener dpickListener = new DatePickerDialog.OnDateSetListener() {
+    private DatePickerDialog.OnDateSetListener datePickListener = new DatePickerDialog.OnDateSetListener() {
         @Override
         public void onDateSet(DatePicker view, int years, int monthOfYear, int dayOfMonth) {
             year = years;
@@ -96,18 +97,18 @@ public class UserCarry extends AppCompatActivity {
     };
 
     public void sumbitCarry(View view) {
-        departureArea = (Spinner) findViewById(R.id.departure_area);
-        arrivalArea = (Spinner) findViewById(R.id.arrival_area);
-        datePreferred = month + "/" + day + "/" + year;
+        departureAreaSpinner = (Spinner) findViewById(R.id.departure_area);
+        arrivalAreaSpinner = (Spinner) findViewById(R.id.arrival_area);
+        datePreferred = button.getText().toString();
         flexibility = (Spinner) findViewById(R.id.flexibility);
         String byteString = bitmapToByteString(((BitmapDrawable) PhotoImageView.getDrawable()).getBitmap());
-        whatToCarry = (EditText) findViewById(R.id.what_to_carry);
+        whatToCarryEditText = (EditText) findViewById(R.id.what_to_carry);
 
-        if(departureArea.equals("")||arrivalArea.equals("")||datePreferred.equals("")||whatToCarry.equals("")){
+        if (departureAreaSpinner.getSelectedItem().toString().equals("") || arrivalAreaSpinner.getSelectedItem().toString().equals("") || datePreferred.equals("") || whatToCarryEditText.getText().toString().equals("")) {
             Toast.makeText(UserCarry.this, "Please enter your required information.", Toast.LENGTH_LONG).show();
-        }else
-        {Good goods = new Good(departureArea.getSelectedItem().toString(), arrivalArea.getSelectedItem().toString(), datePreferred, flexibility.getSelectedItem().toString(),
-                whatToCarry.getText().toString(), userEmail,byteString);
+        }else {
+            Good goods = new Good(departureAreaSpinner.getSelectedItem().toString(), arrivalAreaSpinner.getSelectedItem().toString(), datePreferred, flexibility.getSelectedItem().toString(),
+                    whatToCarryEditText.getText().toString(), userEmail, byteString);
         userRef.child("goods").push().setValue(goods);
         Intent intent = new Intent(UserCarry.this, HomeActivity.class);
         startActivity(intent);}

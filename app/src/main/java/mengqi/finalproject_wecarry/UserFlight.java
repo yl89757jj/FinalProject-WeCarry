@@ -42,6 +42,7 @@ public class UserFlight extends AppCompatActivity {
         year = calendar.get(Calendar.YEAR);
         month = calendar.get(Calendar.MONTH);
         day = calendar.get(Calendar.DAY_OF_MONTH);
+        button = (Button) findViewById(R.id.depart_date);
 
 
         authStateListener = new Firebase.AuthStateListener() {
@@ -87,11 +88,11 @@ public class UserFlight extends AppCompatActivity {
         departure = (Spinner) findViewById(R.id.departure_city);
         arrival = (Spinner) findViewById(R.id.arrival_city);
         flightNo = (EditText) findViewById(R.id.fight_no);
-        departDate = month + "/" + day + "/" + year;
+        departDate = button.getText().toString();
         spaceAvailable = (EditText) findViewById(R.id.space_available);
         specialNote = (EditText) findViewById(R.id.special_note);
 
-        if(departure.equals("")||arrival.equals("")||departDate.equals("")|| spaceAvailable.equals("")){
+        if (departure.getSelectedItem().toString().equals("") || arrival.getSelectedItem().toString().equals("") || departDate.equals("") || spaceAvailable.getText().toString().equals("")) {
             Toast.makeText(UserFlight.this, "Please enter your required information.", Toast.LENGTH_LONG).show();
         }else
         {Flight flight = new Flight(departure.getSelectedItem().toString(), arrival.getSelectedItem().toString(), flightNo.getText().toString(), departDate,

@@ -65,7 +65,8 @@
             android:id="@+id/date_preferred"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="datePick" />
+            android:onClick="datePick"
+            android:text="" />
     </LinearLayout>
 
     <LinearLayout

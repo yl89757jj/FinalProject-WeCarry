@@ -8,12 +8,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 public class SearchResult extends AppCompatActivity {
     private RecyclerView RecyclerView;
     private FlightsAdapter flightsAdapter;
     private GoodsAdapter goodsAdapter;
-
+    private TextView post;
 
 
     @Override
@@ -25,29 +26,29 @@ public class SearchResult extends AppCompatActivity {
 
         RecyclerView = (RecyclerView) findViewById(R.id.resultRecycler_view);
 
-        flightsAdapter = new FlightsAdapter(MainActivity.rootRef.child("flights"), SearchResult.this,2,"");
-        goodsAdapter = new GoodsAdapter(MainActivity.rootRef.child("goods"), SearchResult.this,2,"");
-         if(HomeActivity.fly) {
-             RecyclerView.setAdapter(goodsAdapter);
-         }else{
-             RecyclerView.setAdapter(flightsAdapter);
-         }
+        flightsAdapter = new FlightsAdapter(MainActivity.rootRef.child("flights"), SearchResult.this, 2, "");
+        goodsAdapter = new GoodsAdapter(MainActivity.rootRef.child("goods"), SearchResult.this, 2, "");
+        if (HomeActivity.fly) {
+            RecyclerView.setAdapter(goodsAdapter);
+        } else {
+            RecyclerView.setAdapter(flightsAdapter);
+        }
 
         RecyclerView.setHasFixedSize(true);
         RecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+
     }
 
 
-    public void postMyInfo(View view) {
+    public void postMyFlight(View view) {
         Intent intent = new Intent(SearchResult.this, UserFlight.class);
-        Intent intent1 = new Intent(SearchResult.this, UserCarry.class);
+        startActivity(intent);
+    }
 
-        if (HomeActivity.fly == true) {
-            startActivity(intent);
-        } else {
-            startActivity(intent1);
-        }
+    public void postMyGoods(View view) {
+        Intent intent = new Intent(SearchResult.this, UserCarry.class);
+        startActivity(intent);
     }
 
     @Override

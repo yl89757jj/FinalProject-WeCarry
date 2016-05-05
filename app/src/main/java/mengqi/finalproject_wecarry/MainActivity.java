@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
         Firebase.setAndroidContext(this);
         rootRef = new Firebase("https://wecarry.firebaseio.com");
 
-
         authStateListener = new Firebase.AuthStateListener() {
             @Override
             public void onAuthStateChanged(AuthData authData) {
@@ -32,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
                     TextView username = (TextView) findViewById(R.id.log_in);
                     username.setText("Switch User");
                     //read data
+                } else {
+                    TextView username = (TextView) findViewById(R.id.log_in);
+                    username.setText("LogIn/SignUp");
+
                 }
 
             }

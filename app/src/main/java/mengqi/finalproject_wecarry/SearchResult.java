@@ -8,13 +8,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 
 public class SearchResult extends AppCompatActivity {
     private RecyclerView RecyclerView;
     private FlightsAdapter flightsAdapter;
     private GoodsAdapter goodsAdapter;
-    private TextView post;
 
 
     @Override

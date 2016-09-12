@@ -20,12 +20,12 @@
 
         <TextView
             android:id="@+id/home_flying"
+            style="@style/title"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Available Delivery "
-            style="@style/title" />
+            android:text="Available Delivery " />
 
 
         <android.support.v7.widget.RecyclerView
@@ -38,12 +38,12 @@
 
         <TextView
             android:id="@+id/home_carry"
+            style="@style/title"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Goods Waiting to be Carried"
-            style="@style/title" />
+            android:text="Goods Waiting to be Carried" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/goodsRecycler_view"
@@ -61,52 +61,52 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="2dp"
-        android:paddingTop="3dp"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:paddingTop="3dp">
 
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_weight="2"
-            android:layout_height="wrap_content"
             style="@style/searchText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.5"
             android:text="Departure:" />
 
         <Spinner
             android:id="@+id/departure_cityH"
             android:layout_width="0dp"
-            android:layout_weight="2"
             android:layout_height="wrap_content"
+            android:layout_weight="2"
             android:entries="@array/city_names" />
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_weight="2"
             style="@style/searchText"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="2"
             android:text="Arrival:" />
 
         <Spinner
             android:id="@+id/arrival_cityH"
             android:layout_width="0dp"
-            android:layout_weight="2"
             android:layout_height="wrap_content"
+            android:layout_weight="2"
             android:entries="@array/city_names" />
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_weight="2"
-            android:layout_height="wrap_content"
             style="@style/searchText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
             android:text="Date:" />
 
         <Button
             android:id="@+id/depart_dateH"
             android:layout_width="0dp"
-            android:layout_weight="2"
             android:layout_height="wrap_content"
-            android:text=""
-            android:onClick="datePick" />
+            android:layout_weight="2"
+            android:onClick="datePick"
+            android:text="" />
 
 
     </LinearLayout>
@@ -128,8 +128,8 @@
 
         <Button
             android:id="@+id/carryMe"
-            android:layout_width="0dp"
             style="@style/MyButton"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="SearchFlight"

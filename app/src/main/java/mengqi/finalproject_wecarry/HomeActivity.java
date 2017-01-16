@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.Spinner;
@@ -67,6 +68,18 @@ public class HomeActivity extends AppCompatActivity {
         arrival = (Spinner) findViewById(R.id.arrival_cityH);
 
 
+        //spinner_departure
+        Spinner depart = (Spinner) findViewById(R.id.departure_cityH);
+        ArrayAdapter<CharSequence> departadapter = ArrayAdapter.createFromResource(
+                this, R.array.city_names, R.layout.spinner);
+        departadapter.setDropDownViewResource(R.layout.spinner);
+        depart.setAdapter(departadapter);
+        //spinner_arrival
+        Spinner arr = (Spinner) findViewById(R.id.arrival_cityH);
+        ArrayAdapter<CharSequence> arradapter = ArrayAdapter.createFromResource(
+                this, R.array.city_names, R.layout.spinner);
+        arradapter.setDropDownViewResource(R.layout.spinner);
+        arr.setAdapter(arradapter);
     }
 
     public void datePick(View view) {

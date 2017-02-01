@@ -23,9 +23,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:gravity="center"
             android:text="My Flight"
-            android:textSize="25sp" />
+            style="@style/title" />
 
 
         <android.support.v7.widget.RecyclerView
@@ -43,7 +42,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="My Goods"
-            android:textSize="25sp" />
+            style="@style/title" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/goodsRecycler_view"

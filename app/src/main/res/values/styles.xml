@@ -11,51 +11,51 @@
     <style name="MyButton">
         <item name="android:textColor">#FDFEFE</item>
         <item name="android:background">#55DED6</item>
-        <item name="android:typeface">serif</item>
         <item name="android:padding">1dp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">20sp</item>
         <item name="android:layout_gravity">center</item>
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
         <item name="android:layout_margin">1dp</item>
     </style>
 
     <style name="normalText">
-        <item name="android:textSize">20sp</item>
+
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
         <item name="android:textColor">#26707E</item>
         <item name="android:gravity">center</item>
         <item name="android:paddingTop">2dp</item>
-        <item name="android:fontFamily">serif</item>
     </style>
 
     <style name="normalText2">
-        <item name="android:textSize">20sp</item>
+
         <item name="android:textColor">#17202A</item>
         <item name="android:gravity">center</item>
         <item name="android:paddingTop">2dp</item>
-        <item name="android:fontFamily">serif</item>
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+
     </style>
 
     <style name="searchText">
         <item name="android:textSize">15sp</item>
         <item name="android:textColor">#17202A</item>
-
-        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
 
     </style>
 
     <style name="headLine">
-        <item name="android:textSize">20sp</item>
+
         <item name="android:textColor">#17202A</item>
         <item name="android:paddingTop">2dp</item>
-        <item name="android:fontFamily">serif</item>
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
     </style>
 
     <style name="title">
+        <item name="android:textAppearance">?android:textAppearanceLarge</item>
         <item name="android:textSize">26sp</item>
         <item name="android:textColor">#17202A</item>
         <item name="android:gravity">center</item>
-        <item name="android:fontFamily">serif</item>
-        <item name="android:textStyle">bold</item>
+        <!--<item name="android:fontFamily">serif</item>-->
+        <!--<item name="android:textStyle">bold</item>-->
     </style>
 
 </resources>

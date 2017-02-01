@@ -3,12 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C3EEF6"
+    android:background="#EBF5FB"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingLeft="20sp"
+    android:paddingRight="20sp"
     tools:context="mengqi.finalproject_wecarry.HomeActivity">
 
 
@@ -25,7 +23,7 @@
             android:layout_height="0dp"
             android:layout_weight="1.5"
             android:gravity="center"
-            android:text="Available Delivery " />
+            android:text="Delivery" />
 
 
         <android.support.v7.widget.RecyclerView
@@ -44,7 +42,7 @@
             android:layout_height="0dp"
             android:layout_weight="1.5"
             android:gravity="center"
-            android:text="Goods to be Carried" />
+            android:text="Goods" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/goodsRecycler_view"
@@ -70,7 +68,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_weight="1.5"
+            android:layout_weight="1"
             android:text="Departure:" />
 
         <Spinner
@@ -78,9 +76,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_weight="2.5"
+            android:layout_weight="1"
             android:entries="@array/city_names"
-            android:gravity="left" />
+            android:gravity="start" />
     </LinearLayout>
 
     <LinearLayout
@@ -94,24 +92,24 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_weight="1.5"
+            android:layout_weight="1"
             android:text="Arrival:" />
 
         <Spinner
             android:id="@+id/arrival_cityH"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="2.5"
+            android:layout_weight="1"
             android:layout_gravity="center"
             android:entries="@array/city_names"
-            android:gravity="left" />
+            android:gravity="start" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="2dp"
-        android:layout_weight="1.5"
+        android:layout_weight="1"
         android:orientation="horizontal">
 
         <TextView
@@ -120,14 +118,15 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_weight="1.5"
+            android:layout_weight="1"
             android:text="Date:" />
 
         <Button
+            style="@style/MyButton"
             android:id="@+id/depart_dateH"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="2.5"
+            android:layout_weight="1"
             android:gravity="center"
             android:onClick="datePick"
             android:text=""

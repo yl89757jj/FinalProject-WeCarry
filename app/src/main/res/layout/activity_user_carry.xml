@@ -21,12 +21,14 @@
             style="@style/normalText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="Departure area" />
 
         <Spinner
             android:id="@+id/departure_area"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:entries="@array/city_names" />
     </LinearLayout>
 
@@ -39,6 +41,7 @@
         <TextView
             style="@style/normalText2"
             android:layout_width="wrap_content"
+            android:layout_gravity="center"
             android:layout_height="wrap_content"
             android:text="Arrival Area:" />
 
@@ -46,6 +49,7 @@
             android:id="@+id/arrival_area"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:entries="@array/city_names" />
     </LinearLayout>
 
@@ -59,6 +63,7 @@
             style="@style/normalText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="Date preferred:" />
 
         <Button

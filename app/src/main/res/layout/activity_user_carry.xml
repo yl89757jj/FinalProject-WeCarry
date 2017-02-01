@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C3EEF6"
+    android:background="#EBF5FB"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -18,10 +18,10 @@
         android:orientation="horizontal">
 
         <TextView
+            style="@style/normalText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Departure area"
-            style="@style/normalText2" />
+            android:text="Departure area" />
 
         <Spinner
             android:id="@+id/departure_area"
@@ -37,10 +37,10 @@
         android:orientation="horizontal">
 
         <TextView
+            style="@style/normalText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Arrival Area:"
-            style="@style/normalText2" />
+            android:text="Arrival Area:" />
 
         <Spinner
             android:id="@+id/arrival_area"
@@ -56,13 +56,14 @@
         android:orientation="horizontal">
 
         <TextView
+            style="@style/normalText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Date preferred:"
-            style="@style/normalText2" />
+            android:text="Date preferred:" />
 
         <Button
             android:id="@+id/date_preferred"
+            style="@style/MyButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="datePick"
@@ -76,10 +77,10 @@
         android:orientation="horizontal">
 
         <TextView
+            style="@style/normalText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Flexibility:"
-            style="@style/normalText2" />
+            android:text="Flexibility:" />
 
         <Spinner
             android:id="@+id/flexibility"
@@ -95,20 +96,20 @@
         android:orientation="vertical">
 
         <TextView
+            style="@style/normalText2"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="2"
-            android:text="What to carry:"
-            style="@style/normalText2" />
+            android:text="What to carry:" />
 
         <EditText
             android:id="@+id/what_to_carry"
+            style="@style/normalText2"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="5"
             android:gravity="top"
-            android:inputType="textMultiLine"
-            style="@style/normalText2" />
+            android:inputType="textMultiLine" />
     </LinearLayout>
 
     <LinearLayout
@@ -118,24 +119,30 @@
         android:orientation="horizontal">
 
         <Button
+            style="@style/MyButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:onClick="addImage"
-            android:text="Add Image" />
+            android:text="Add Image"
+            android:textSize="14sp" />
 
         <Button
+            style="@style/MyButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:onClick="takeImage"
-            android:text="Take Image" />
+            android:text="Take Image"
+            android:textSize="14sp" />
     </LinearLayout>
 
     <ImageView
         android:id="@+id/image_photo"
-        android:src="@drawable/goods"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="7" />
+        android:layout_weight="7"
+        android:src="@drawable/goods" />
 
 
     <Button

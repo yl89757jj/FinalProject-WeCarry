@@ -66,7 +66,7 @@ public class UserCarry extends AppCompatActivity {
                     startActivity(intent);
                 } else {
                     userRef = MainActivity.rootRef;
-                    userEmail=authData.getProviderData().get("email").toString();
+                    userEmail = authData.getProviderData().get("email").toString();
 
                 }
             }
@@ -106,12 +106,13 @@ public class UserCarry extends AppCompatActivity {
 
         if (departureAreaSpinner.getSelectedItem().toString().equals("") || arrivalAreaSpinner.getSelectedItem().toString().equals("") || datePreferred.equals("") || whatToCarryEditText.getText().toString().equals("")) {
             Toast.makeText(UserCarry.this, "Please enter your required information.", Toast.LENGTH_LONG).show();
-        }else {
+        } else {
             Good goods = new Good(departureAreaSpinner.getSelectedItem().toString(), arrivalAreaSpinner.getSelectedItem().toString(), datePreferred, flexibility.getSelectedItem().toString(),
                     whatToCarryEditText.getText().toString(), userEmail, byteString);
-        userRef.child("goods").push().setValue(goods);
-        Intent intent = new Intent(UserCarry.this, HomeActivity.class);
-        startActivity(intent);}
+            userRef.child("goods").push().setValue(goods);
+            Intent intent = new Intent(UserCarry.this, HomeActivity.class);
+            startActivity(intent);
+        }
     }
 
     public void takeImage(View view) {

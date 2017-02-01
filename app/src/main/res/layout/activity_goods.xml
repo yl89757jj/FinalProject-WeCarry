@@ -3,11 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
     tools:context="mengqi.finalproject_wecarry.GoodsActivity">
 
 
@@ -18,17 +18,17 @@
         android:orientation="horizontal">
 
         <TextView
+            style="@style/normalText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Departure area:"
-            style="@style/normalText2" />
+            android:text="Departure area:" />
 
         <TextView
             android:id="@+id/select_departure"
+            style="@style/normalText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
-            style="@style/normalText" />
+            android:text="" />
 
     </LinearLayout>
 
@@ -39,17 +39,17 @@
         android:orientation="horizontal">
 
         <TextView
+            style="@style/normalText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Arrival Area:"
-            style="@style/normalText2" />
+            android:text="Arrival Area:" />
 
         <TextView
             android:id="@+id/select_arrival"
+            style="@style/normalText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
-            style="@style/normalText" />
+            android:text="" />
 
     </LinearLayout>
 
@@ -60,17 +60,17 @@
         android:orientation="horizontal">
 
         <TextView
+            style="@style/normalText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Date preferred:"
-            style="@style/normalText2" />
+            android:text="Date preferred:" />
 
         <TextView
             android:id="@+id/select_date"
+            style="@style/normalText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
-            style="@style/normalText" />
+            android:text="" />
 
     </LinearLayout>
 
@@ -81,17 +81,17 @@
         android:orientation="horizontal">
 
         <TextView
+            style="@style/normalText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Flexibility:"
-            style="@style/normalText2" />
+            android:text="Flexibility:" />
 
         <TextView
             android:id="@+id/select_flexibility"
+            style="@style/normalText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
-            style="@style/normalText" />
+            android:text="" />
 
     </LinearLayout>
 
@@ -100,23 +100,20 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
         <TextView
+            style="@style/normalText2"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="What to carry:"
-            style="@style/normalText2" />
+            android:layout_height="wrap_content"
+            android:text="What to carry:" />
 
         <TextView
             android:id="@+id/select_what_to_carry"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="top"
             style="@style/normalText"
-            />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top" />
     </LinearLayout>
 
     <LinearLayout
@@ -126,10 +123,11 @@
         android:orientation="vertical">
 
         <TextView
+            style="@style/normalText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Photo"
-            style="@style/normalText2" />
+            android:text="Photo" />
+
         <ImageView
             android:id="@+id/select_photo"
             android:layout_width="match_parent"
@@ -146,21 +144,20 @@
         android:orientation="vertical">
 
         <TextView
+            style="@style/normalText2"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="Send Message"
-            style="@style/normalText2"
-        />
+            android:text="Send Message" />
 
         <EditText
             android:id="@+id/message1"
+            style="@style/normalText"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="5"
             android:gravity="top"
-            android:inputType="textMultiLine"
-            style="@style/normalText" />
+            android:inputType="textMultiLine" />
     </LinearLayout>
 
 

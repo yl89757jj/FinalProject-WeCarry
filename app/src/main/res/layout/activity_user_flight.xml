@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C3EEF6"
+    android:background="#EBF5FB"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -20,10 +20,10 @@
 
 
         <TextView
+            style="@style/normalText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Departure:"
-            style="@style/normalText2" />
+            android:text="Departure:" />
 
         <Spinner
             android:id="@+id/departure_city"
@@ -39,10 +39,10 @@
         android:orientation="horizontal">
 
         <TextView
+            style="@style/normalText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Arrival:"
-            style="@style/normalText2" />
+            android:text="Arrival:" />
 
         <Spinner
             android:id="@+id/arrival_city"
@@ -58,17 +58,17 @@
         android:orientation="horizontal">
 
         <TextView
+            style="@style/normalText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Flight No.:"
-            style="@style/normalText2" />
+            android:text="Flight No.:" />
 
         <EditText
             android:id="@+id/fight_no"
+            style="@style/normalText2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textCapWords"
-            style="@style/normalText2" />
+            android:inputType="textCapWords" />
     </LinearLayout>
 
     <LinearLayout
@@ -78,16 +78,18 @@
         android:orientation="horizontal">
 
         <TextView
+            style="@style/normalText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Departure Date:"
-            style="@style/normalText2" />
+            android:text="Departure Date:" />
 
         <Button
             android:id="@+id/depart_date"
+            style="@style/MyButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="datePick" />
+            android:onClick="datePick"
+            android:textSize="14sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -97,36 +99,36 @@
         android:orientation="vertical">
 
         <TextView
+            style="@style/normalText2"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="Space Available:"
-            style="@style/normalText2" />
+            android:text="Space Available:" />
 
         <EditText
             android:id="@+id/space_available"
+            style="@style/normalText2"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="3"
             android:gravity="top"
-            android:inputType="textMultiLine"
-            style="@style/normalText2" />
+            android:inputType="textMultiLine" />
 
         <TextView
+            style="@style/normalText2"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="Special Note:"
-            style="@style/normalText2" />
+            android:text="Special Note:" />
 
         <EditText
             android:id="@+id/special_note"
+            style="@style/normalText2"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="3"
             android:gravity="top"
-            android:inputType="textMultiLine"
-            style="@style/normalText2" />
+            android:inputType="textMultiLine" />
     </LinearLayout>
 
     <Button

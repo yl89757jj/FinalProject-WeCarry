@@ -69,6 +69,7 @@
         <Button
             android:id="@+id/date_preferred"
             style="@style/MyButton"
+            android:textSize="14sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="datePick"

@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="My Flight"
+            android:text="@string/my_flight"
             style="@style/title" />
 
 
@@ -41,7 +41,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="My Goods"
+            android:text="@string/my_goods"
             style="@style/title" />
 
         <android.support.v7.widget.RecyclerView
@@ -68,7 +68,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="PostFlight"
-            android:text="Post My Flight " />
+            android:text="@string/post_my_flight" />
 
         <Button
             android:id="@+id/user_carryMe"
@@ -77,7 +77,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="PostGoods"
-            android:text="Post My Goods" />
+            android:text="@string/post_my_goods" />
 
     </LinearLayout>
 

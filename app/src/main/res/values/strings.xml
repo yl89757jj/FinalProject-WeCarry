@@ -1,5 +1,37 @@
 <resources>
     <string name="app_name">WeCarry</string>
+    <string name="arrival">Arrival:</string>
+    <string name="flight_no">Flight No.:</string>
+    <string name="departure_date">Departure Date:</string>
+    <string name="space_available">Space Available:</string>
+    <string name="special_note">Special Note:</string>
+    <string name="send_message">Send Message</string>
+    <string name="send">Send</string>
+    <string name="date_preferred">Date preferred:</string>
+    <string name="flexibility">Flexibility:</string>
+    <string name="what_to_carry">What to carry:</string>
+    <string name="delivery">Delivery</string>
+    <string name="photo">Photo</string>
+    <string name="goods">Goods</string>
+    <string name="depature">Departure:</string>
+    <string name="date">Date:</string>
+    <string name="search_goods">Search Goods</string>
+    <string name="search_delivery">Search Delivery</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="log_in">Log In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="continued">Continue</string>
+    <string name="post_my_flight">Post My Flight</string>
+    <string name="post_my_goods">Post My Goods</string>
+    <string name="my_flight">My Flight</string>
+    <string name="my_goods">My Goods</string>
+    <string name="pick_phto">Pick Photo</string>
+    <string name="take_phto">Take Photo</string>
+    <string name="submit">Submit</string>
+    <string name="arrow">  ->  </string>
+    <string name="depature_area">Departure Area</string>
+    <string name="arrival_area">Arrival Area</string>
     <string-array name="city_names">
         <item> </item>
         <item>New York</item>

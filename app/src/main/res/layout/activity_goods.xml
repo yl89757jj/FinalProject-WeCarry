@@ -21,7 +21,7 @@
             style="@style/normalText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Departure area:" />
+            android:text="@string/depature_area" />
 
         <TextView
             android:id="@+id/select_departure"
@@ -42,7 +42,7 @@
             style="@style/normalText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Arrival Area:" />
+            android:text="@string/arrival_area" />
 
         <TextView
             android:id="@+id/select_arrival"
@@ -63,7 +63,7 @@
             style="@style/normalText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Date preferred:" />
+            android:text="@string/date_preferred" />
 
         <TextView
             android:id="@+id/select_date"
@@ -84,7 +84,7 @@
             style="@style/normalText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Flexibility:" />
+            android:text="@string/flexibility" />
 
         <TextView
             android:id="@+id/select_flexibility"
@@ -106,7 +106,7 @@
             style="@style/normalText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="What to carry:" />
+            android:text="@string/what_to_carry" />
 
         <TextView
             android:id="@+id/select_what_to_carry"
@@ -126,7 +126,7 @@
             style="@style/normalText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Photo" />
+            android:text="@string/photo" />
 
         <ImageView
             android:id="@+id/select_photo"
@@ -148,7 +148,7 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="Send Message" />
+            android:text="@string/send_message" />
 
         <EditText
             android:id="@+id/message1"
@@ -169,5 +169,5 @@
         android:layout_weight="1"
         android:gravity="center"
         android:onClick="sendEmail"
-        android:text="Send" />
+        android:text="@string/send" />
 </LinearLayout>

@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Departure area" />
+            android:text="@string/depature_area" />
 
         <Spinner
             android:id="@+id/departure_area"
@@ -43,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_gravity="center"
             android:layout_height="wrap_content"
-            android:text="Arrival Area:" />
+            android:text="@string/arrival_area" />
 
         <Spinner
             android:id="@+id/arrival_area"
@@ -64,7 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Date preferred:" />
+            android:text="@string/date_preferred" />
 
         <Button
             android:id="@+id/date_preferred"
@@ -86,7 +86,7 @@
             style="@style/normalText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Flexibility:" />
+            android:text="@string/flexibility" />
 
         <Spinner
             android:id="@+id/flexibility"
@@ -106,7 +106,7 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="2"
-            android:text="What to carry:" />
+            android:text="@string/what_to_carry" />
 
         <EditText
             android:id="@+id/what_to_carry"
@@ -130,7 +130,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:onClick="addImage"
-            android:text="Add Image"
+            android:text="@string/pick_phto"
             android:textSize="14sp" />
 
         <Button
@@ -139,7 +139,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:onClick="takeImage"
-            android:text="Take Image"
+            android:text="@string/take_phto"
             android:textSize="14sp" />
     </LinearLayout>
 
@@ -160,6 +160,6 @@
         android:layout_weight="1"
         android:gravity="center"
         android:onClick="sumbitCarry"
-        android:text="Submit" />
+        android:text="@string/submit" />
 
 </LinearLayout>

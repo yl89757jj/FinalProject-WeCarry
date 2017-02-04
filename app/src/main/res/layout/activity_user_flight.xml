@@ -23,7 +23,7 @@
             style="@style/normalText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Departure:" />
+            android:text="@string/depature" />
 
         <Spinner
             android:id="@+id/departure_city"
@@ -42,7 +42,7 @@
             style="@style/normalText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Arrival:" />
+            android:text="@string/arrival" />
 
         <Spinner
             android:id="@+id/arrival_city"
@@ -61,7 +61,7 @@
             style="@style/normalText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Flight No.:" />
+            android:text="@string/flight_no" />
 
         <EditText
             android:id="@+id/fight_no"
@@ -81,7 +81,7 @@
             style="@style/normalText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Departure Date:" />
+            android:text="@string/departure_date" />
 
         <Button
             android:id="@+id/depart_date"
@@ -103,7 +103,7 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="Space Available:" />
+            android:text="@string/space_available" />
 
         <EditText
             android:id="@+id/space_available"
@@ -119,7 +119,7 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="Special Note:" />
+            android:text="@string/special_note" />
 
         <EditText
             android:id="@+id/special_note"
@@ -140,6 +140,6 @@
         android:layout_weight="1"
         android:gravity="center"
         android:onClick="submitFlight"
-        android:text="Submit" />
+        android:text="@string/submit" />
 
 </LinearLayout>

@@ -34,7 +34,7 @@
             android:layout_marginRight="4dp"
             android:layout_weight="1"
             android:onClick="postMyFlight"
-            android:text="Post My Flight" />
+            android:text="@string/post_my_flight" />
 
         <Button
             android:id="@+id/post_goods"
@@ -44,7 +44,7 @@
             android:layout_marginLeft="4dp"
             android:layout_weight="1"
             android:onClick="postMyGoods"
-            android:text="Post My Goods" />
+            android:text="@string/post_my_goods" />
     </LinearLayout>
 
 </LinearLayout>

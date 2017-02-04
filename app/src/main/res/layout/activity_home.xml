@@ -23,7 +23,7 @@
             android:layout_height="0dp"
             android:layout_weight="1.5"
             android:gravity="center"
-            android:text="Delivery" />
+            android:text="@string/delivery" />
 
 
         <android.support.v7.widget.RecyclerView
@@ -42,7 +42,7 @@
             android:layout_height="0dp"
             android:layout_weight="1.5"
             android:gravity="center"
-            android:text="Goods" />
+            android:text="@string/goods" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/goodsRecycler_view"
@@ -69,7 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:text="Departure:" />
+            android:text="@string/depature" />
 
         <Spinner
             android:id="@+id/departure_cityH"
@@ -94,7 +94,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:text="Arrival:" />
+            android:text="@string/arrival" />
 
         <Spinner
             android:id="@+id/arrival_cityH"
@@ -120,7 +120,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:text="Date:" />
+            android:text="@string/date" />
 
         <Button
             style="@style/MyButton"
@@ -149,7 +149,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="SearchGoods"
-            android:text="Search Goods " />
+            android:text="@string/search_goods" />
 
         <Button
             android:id="@+id/carryMe"
@@ -158,7 +158,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="SearchFlight"
-            android:text="Search Delivery" />
+            android:text="@string/search_delivery" />
 
     </LinearLayout>
 

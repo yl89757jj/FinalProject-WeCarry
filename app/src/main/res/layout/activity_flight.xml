@@ -41,7 +41,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Arrival:"
+            android:text="@string/arrival"
             style="@style/normalText2" />
 
         <TextView
@@ -61,7 +61,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Flight No.:"
+            android:text="@string/flight_no"
             style="@style/normalText2" />
 
         <TextView
@@ -81,7 +81,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Departure Date:"
+            android:text="@string/departure_date"
             style="@style/normalText2" />
 
         <TextView
@@ -102,7 +102,7 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="Space Available:"
+            android:text="@string/space_available"
             style="@style/normalText2" />
 
         <TextView
@@ -118,7 +118,7 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="Special Note:"
+            android:text="@string/special_note"
             style="@style/normalText2" />
 
         <TextView
@@ -127,7 +127,6 @@
             android:layout_height="0dp"
             android:layout_weight="3"
             android:gravity="top"
-            android:inputType="textMultiLine"
             style="@style/normalText" />
     </LinearLayout>
 
@@ -141,7 +140,7 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="Send Message"
+            android:text="@string/send_message"
             style="@style/normalText2"
             />
 
@@ -164,5 +163,5 @@
         android:layout_weight="1"
         android:gravity="center"
         android:onClick="sendEmail1"
-        android:text="Send" />
+        android:text="@string/send" />
 </LinearLayout>

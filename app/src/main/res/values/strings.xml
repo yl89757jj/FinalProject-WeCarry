@@ -32,6 +32,8 @@
     <string name="arrow">  ->  </string>
     <string name="depature_area">Departure Area</string>
     <string name="arrival_area">Arrival Area</string>
+    <string name="photo_description">Photo of Goods</string>
+
     <string-array name="city_names">
         <item> </item>
         <item>New York</item>
@@ -43,6 +45,7 @@
         <item>Guangzhou</item>
         <item>HongKong</item>
     </string-array>
+
     <string-array name="flexibility">
         <item>Yes</item>
         <item>No</item>
